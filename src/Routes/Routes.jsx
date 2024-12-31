@@ -4,6 +4,7 @@ import CalTrack from "../Pages/CalTrack/CalTrack";
 import Home from "../Pages/Home/Home";
 import BmiCal from "../Pages/CalTrack/BmiCal";
 import FoodCal from "../Pages/CalTrack/FoodCalCnt/FoodCal";
+import SickFood from "../Pages/SickBasedFood/SickFood";
 
 
 export const router = createBrowserRouter([
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
              {
                 path:"/foodcal",
                 element:<FoodCal/>,
+             },
+             {
+                path:"/sickfood",
+                element:<SickFood/>,
              }
             
         ]

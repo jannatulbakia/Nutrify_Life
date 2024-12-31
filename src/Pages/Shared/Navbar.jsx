@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   return (
@@ -144,7 +144,9 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
-              <li><Link to ='/'>Home</Link></li>
+              <li><a href="/">Home</a></li>
+              
+              
               <li>
                 <a>Dietary Guide</a>
                 <ul className="detalis p-2">
@@ -152,7 +154,8 @@ const Navbar = () => {
                   <li><a>Gender Based</a></li>
                 </ul>
               </li>
-              <li><Link to ='/caltrack'>Calorie Track</Link></li>
+              <li> <a href="/caltrack">Calorie Track</a></li>
+              <li><a href='/sickfood'>Sickness Diet</a></li>
               <li><a>Review</a></li>
             </ul>
           </div>
@@ -160,7 +163,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
+            <li><a href='/'>Home</a></li>
             <li>
               <details>
                 <summary>Dietary Guide</summary>
@@ -170,7 +173,8 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
-            <li><a>Calory Track</a></li>
+            <li><a href="/caltrack">Calory Track</a></li>
+            <li><a href='/sickfood'>Sickness Diet</a></li>
             <li><a>Review</a></li>
           </ul>
         </div>

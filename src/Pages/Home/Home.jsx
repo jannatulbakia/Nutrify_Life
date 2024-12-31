@@ -42,8 +42,10 @@ const Home = () => {
                     But that’s not all—our website is packed with valuable insights, practical tips, and innovative features designed to cater to diverse health needs. Whether you're focused on achieving your fitness goals, improving your diet, or enhancing your overall lifestyle, we’re committed to being your partner in every step of your health journey.
 
                     Explore, learn, and thrive with Nutrify Life  because your health matters, and we’re here to help you make the most of it.</p>
+            
             </div>
         </div>
+        
     );
 };
 
