@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color for general content */
+}
+
+.App {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff; /* White text for the heading */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #333; /* Dark background for cards */
+    border-radius: 15px; /* Rounded corners */
+    padding: 25px;
+    width: 280px;
+    text-align: left;
+    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Hover effect: slightly raise the card */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* More intense shadow on hover */
+}
+
+.card h2 {
+    font-size: 1.6em;
+    color: #ff6347; /* Tomato red for the card title */
+    margin-bottom: 15px;
+}
+
+.card ul {
+    padding: 0;
+    list-style: none;
+    color: #ccc; /* Light grey text for list items */
+}
+
+.card li {
+    margin: 10px 0;
+}
+
+.card .button {
+    background-color: yellow; /* Button color matching the card title */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.card .button:hover {
+    background-color: #e55347; /* Darker shade of red on hover */
+}
+
+/* New class for sickness name */
+.sickness-name {
+    color: #928833; /* Yellow color for sickness name */
+    font-weight: bold;
+}
