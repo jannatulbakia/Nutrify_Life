@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Navbar = () => {
   return (
     <>
@@ -80,8 +79,31 @@ const Navbar = () => {
             background-color: var(--mocha-brown);
             color: var(--light);
           }
-          .detalis li{
-            color: var(mocha-brown);
+
+          /* Updated details dropdown color */
+          .detalis {
+            background-color: var(--light-tan); /* Change background color to light tan */
+            color: var(--mocha-brown); /* Text color */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px; /* Increase padding to make the dropdown box bigger */
+            width: 200px; /* Increase width for a more spacious dropdown */
+            display: flex;
+            flex-direction: column; /* Stack the items vertically */
+            gap: 10px; /* Add space between the items */
+          }
+
+          .detalis li a {
+            font-size: 1.1rem; /* Slightly increase font size for better readability */
+            color: var(--mocha-brown); /* Change the color of dropdown items to mocha brown */
+            padding: 12px; /* Increase padding for a larger clickable area */
+            transition: color 0.3s ease;
+            text-align: left; /* Align text to the left */
+          }
+
+          .detalis li a:hover {
+            color: var(--light-tan);
+            background-color: var(--mocha-brown); /* Light tan background on hover */
           }
 
           /* Sign-up button */
@@ -124,6 +146,7 @@ const Navbar = () => {
           }
         `}
       </style>
+
       <div className="navbar bg-gradient-to-r from-mochaBrown to-lightTan">
         <div className="navbar-start">
           <div className="dropdown">
@@ -145,8 +168,6 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
               <li><a href="/">Home</a></li>
-              
-              
               <li>
                 <a>Dietary Guide</a>
                 <ul className="detalis p-2">
@@ -154,7 +175,7 @@ const Navbar = () => {
                   <li><a>Gender Based</a></li>
                 </ul>
               </li>
-              <li> <a href="/caltrack">Calorie Track</a></li>
+              <li><a href="/caltrack">Calorie Track</a></li>
               <li><a href='/sickfood'>Sickness Diet</a></li>
               <li><a>Review</a></li>
             </ul>
@@ -167,7 +188,7 @@ const Navbar = () => {
             <li>
               <details>
                 <summary>Dietary Guide</summary>
-                <ul className="p-2">
+                <ul className="detalis p-2">
                   <li><a>Age Based</a></li>
                   <li><a>Gender Based</a></li>
                 </ul>
