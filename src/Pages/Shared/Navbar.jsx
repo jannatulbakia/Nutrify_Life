@@ -168,13 +168,8 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
               <li><a href="/">Home</a></li>
-              <li>
-                <a>Dietary Guide</a>
-                <ul className="detalis p-2">
-                  <li><a>Age Based</a></li>
-                  <li><a>Gender Based</a></li>
-                </ul>
-              </li>
+              <li><a href="/diet">Dietary Guide</a></li>
+              
               <li><a href="/caltrack">Calorie Track</a></li>
               <li><a href='/sickfood'>Sickness Diet</a></li>
               <li><a>Review</a></li>
@@ -185,22 +180,18 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><a href='/'>Home</a></li>
-            <li>
-              <details>
-                <summary>Dietary Guide</summary>
-                <ul className="detalis p-2">
-                  <li><a>Age Based</a></li>
-                  <li><a>Gender Based</a></li>
-                </ul>
-              </details>
-            </li>
+            <li><a href="/diet">Dietary Guide</a></li>
+            
+            
             <li><a href="/caltrack">Calory Track</a></li>
+            <li><a href="/profile">Profile</a></li>
             <li><a href='/sickfood'>Sickness Diet</a></li>
+            
             <li><a>Review</a></li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-primary">Sign up</a>
+          <a href='/signup' className="btn btn-primary">Sign up</a>
         </div>
       </div>
     </>

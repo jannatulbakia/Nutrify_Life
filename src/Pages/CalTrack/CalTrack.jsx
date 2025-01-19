@@ -1,4 +1,4 @@
-import BmiCal from "./BmiCal";
+import BmiCal from "./BmiCal/BmiCal";
 import FoodCal from "./FoodCalCnt/FoodCal";
 
 const CalTrack = () => {

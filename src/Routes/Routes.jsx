@@ -1,13 +1,17 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import CalTrack from "../Pages/CalTrack/CalTrack";
 import Home from "../Pages/Home/Home";
-import BmiCal from "../Pages/CalTrack/BmiCal";
+import BmiCal from "../Pages/CalTrack/BmiCal/BmiCal";
 import FoodCal from "../Pages/CalTrack/FoodCalCnt/FoodCal";
 import SickFood from "../Pages/SickBasedFood/SickFood";
+import Signup from "../Pages/Registration/SignUp/SignUp";
+import LogIn from "../Pages/Registration/LogIn/LogIn";
+import Profile from "../Pages/Profile/Profile";
+import Diet from "../Pages/FoodClass/Diet";
 
 
-export const router = createBrowserRouter([
+export const router =  createBrowserRouter([
     {
         path:"/",
         element:<MainLayout/>,
@@ -28,6 +32,24 @@ export const router = createBrowserRouter([
                 path:"/foodcal",
                 element:<FoodCal/>,
              },
+             {
+               path:"/signup",
+               element:<Signup/>,
+
+            },
+            {
+               path: "/login",
+               element: <LogIn/>,
+             },
+            {
+               path:"/profile",
+               element:<Profile/>,
+            },
+            {
+               path:"/diet",
+               element:<Diet/>,
+            },
+
              {
                 path:"/sickfood",
                 element:<SickFood/>,
