@@ -9,6 +9,7 @@ import Signup from "../Pages/Registration/SignUp/SignUp";
 import LogIn from "../Pages/Registration/LogIn/LogIn";
 import Profile from "../Pages/Profile/Profile";
 import Diet from "../Pages/FoodClass/Diet";
+import NutryProducts from "../Pages/NutryProduct/NutryProducts";
 
 
 export const router =  createBrowserRouter([
@@ -49,6 +50,11 @@ export const router =  createBrowserRouter([
                path:"/diet",
                element:<Diet/>,
             },
+            {
+               path:"/nutryproducts",
+               element:<NutryProducts/>,
+            },
+
 
              {
                 path:"/sickfood",

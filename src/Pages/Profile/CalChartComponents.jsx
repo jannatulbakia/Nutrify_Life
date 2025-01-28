@@ -1,30 +1,29 @@
 import React from 'react';
 
 const CalChartComponents = ({ food }) => {
-    const{quantity,name,calories} =food;
+    const { quantity, name, calories } = food;
     return (
-        <div style={{ padding: "20px" }}>
-            <h2 style={{ textAlign: "center" }}>Foods List</h2>
+        <div>
             <table
                 border="1"
                 style={{
                     width: "100%",
                     borderCollapse: "collapse",
-                    textAlign: "center",
-                    marginTop: "20px",
-                    backgroundColor: "#ffffff",
-                    color: "#000000",
+                    textAlign: "left",
+                    backgroundColor: "#000000",  // Black background
+                    color: "#ffffff",  // White text
                 }}
             >
-                <tr>
-                <th>Name </th>
-                <th>Quantity</th>
-                <th>Calories</th>
-                </tr>
-
-                <tr><td>{name}</td><td>{quantity}</td><td>{calories}</td></tr>
-                
-       
+                <tbody>
+                    <tr>
+                        <th style={{ border: "1px solid white", padding: "10px", height: "50px" }}>Name</th>
+                        <td style={{ border: "1px solid white", padding: "10px", height: "50px" }}>{name}</td>
+                        <th style={{ border: "1px solid white", padding: "10px", height: "50px" }}>Quantity</th>
+                        <td style={{ border: "1px solid white", padding: "10px", height: "50px" }}>{quantity}</td>
+                        <th style={{ border: "1px solid white", padding: "10px", height: "50px" }}>Calories</th>
+                        <td style={{ border: "1px solid white", padding: "10px", height: "50px" }}>{calories}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
