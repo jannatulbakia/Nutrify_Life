@@ -1,88 +1,126 @@
-/* Diet.css */
+/* Container */
 .quiz-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .quiz-step {
-    margin-top: 20px;
-  }
-  
-  h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #555;
-  }
-  
-  .options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .option {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .option img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-  }
-  
-  .option span {
-    font-size: 0.9rem;
-    color: #333;
-  }
-  
-  .option:hover {
-    background-color: #f0f8ff;
-    border-color: #007bff;
-    transform: translateY(-3px);
-  }
-  
-  .btn-submit {
-    background-color: #28a745;
-    color: #fff;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-submit:hover {
-    background-color: #218838;
-  }
-  
-  .quiz-step p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #fef9e4; /* Light yellow background */
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  border: 2px solid #ffbf00; /* Playful bright yellow border */
+}
+
+/* Title */
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #000; /* Black color for title */
+  font-weight: 700; /* Bold title for more fun */
+  letter-spacing: 2px;
+}
+
+/* Quiz Step */
+.quiz-step {
+  margin-top: 30px;
+}
+
+/* Step Title */
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #000; /* Black color for step titles */
+  font-weight: 600;
+}
+
+/* Options Container */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Option */
+.option {
+  background: #ffffff;
+  border: 2px solid #ff7f50; /* Fun coral-orange border */
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for cards */
+}
+
+/* Option Image */
+.option img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  transition: transform 0.3s ease; /* Fun scale effect */
+}
+
+/* Option Text with Emojis */
+.option span {
+  font-size: 1.6rem; /* Larger emojis for more fun */
+  color: #000; /* Black text color */
+  font-weight: 600; /* Bold text for emphasis */
+}
+
+/* Hover Effect for Option */
+.option:hover {
+  background-color: #ffebcd; /* Light peach background on hover */
+  border-color: #ff4500; /* Vibrant orange border on hover */
+  transform: translateY(-5px); /* Lift card slightly */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Darker shadow for hover */
+}
+
+.option:hover img {
+  transform: scale(1.1); /* Fun scaling effect on hover */
+}
+
+/* Submit Button */
+.btn-submit {
+  background-color: #ff6347; /* Vibrant tomato-orange button */
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Submit Button Hover */
+.btn-submit:hover {
+  background-color: #ff4500; /* Darker orange when hovered */
+  transform: scale(1.05); /* Slight scale-up effect */
+}
+
+/* Display Dietary Advice */
+.quiz-step p {
+  font-size: 1.2rem;
+  color: #000; /* Black text color */
+  line-height: 1.6;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: #3e3a3a; /* Dark footer background */
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 0 0 12px 12px;
+}

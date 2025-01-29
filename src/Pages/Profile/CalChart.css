@@ -1,0 +1,129 @@
+/* General Styles */
+.calculator-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Search Input */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Reduced bottom margin to make the dropdown closer */
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    position: relative; /* Ensures dropdown is positioned relative to this */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #f0b400;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+}
+
+button {
+    background-color: #f0b400;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #d59c00;
+}
+
+/* Food List (Dropdown) */
+.dropdown-list {
+    border: 1px solid #fff;
+    position: absolute; /* Absolute positioning for dropdown */
+    max-height: 150px; /* Smaller size for the dropdown */
+    overflow-y: auto;
+    width: 100%;
+    background-color: #222;
+    z-index: 1;
+    border-radius: 4px;
+    top: 40px; /* Positioned directly below the input field */
+    left: 0; /* Align it to the left of the input */
+}
+
+/* Dropdown Item Styling */
+.dropdown-item {
+    padding: 8px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #444;
+}
+
+/* Added Foods Section */
+.added-foods {
+    margin-top: 30px;
+    color: white; 
+}
+
+.added-food-item {
+    margin-bottom: 10px;
+}
+
+.added-food-item p {
+    font-size: 16px;
+}
+
+.added-foods h3 {
+    font-size: 22px;
+}
+
+/* Total Calories Text */
+.added-foods h3, .added-food-item p {
+    color: white;
+}
+
+/* Food Calorie Component */
+.Food-Calorie {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin: 10px 0;
+    background-color: #333;
+}
+
+.Food-Calorie p {
+    margin: 5px 0;
+    color: white;
+}
+
+.Food-Calorie span {
+    color: #f0b400;
+}
