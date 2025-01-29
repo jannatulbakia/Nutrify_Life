@@ -1,0 +1,161 @@
+/* Container for product cards */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+  background-color: #121110;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the product heading */
+.products h2 {
+  font-size: 2rem;
+  color: #f2ab05;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.products h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: #f2ab05;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+}
+
+/* Individual card styling */
+.product-card {
+  background: linear-gradient(135deg, #aa8634, #846953);
+  border-radius: 16px;
+  padding: 16px;
+  color: #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+/* Decorative Gradient Overlay */
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+/* Content inside the card */
+.product-card p {
+  font-size: 1rem;
+  color: rgb(95, 37, 37);
+  line-height: 1.6;
+  
+}
+
+.product-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #f2ab05;
+}
+
+.product-card .price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #f2ab05;
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Subtle divider inside the card */
+.product-card hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 12px 0;
+}
+
+/* Floating badge on top */
+.product-card .badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #f2ab05;
+  color: #121110;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+/* Pagination style */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #f2ab05;
+  color: #121110;
+  padding: 10px 16px;
+  border: none;
+  margin: 0 4px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #aa8634;
+}
+
+/* Page animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.product-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    padding: 12px;
+  }
+}
