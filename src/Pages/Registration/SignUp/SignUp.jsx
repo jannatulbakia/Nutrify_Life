@@ -3,6 +3,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { auth, db } from "../../../firebase/firebase";
+import './SignUp.css';
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

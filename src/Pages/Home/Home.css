@@ -2,13 +2,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 50px; /* Adds space below the home intro section */
+    padding-bottom: 50px;
     padding-top: 10px;
+    flex-wrap: wrap; /* Allow the elements to wrap on smaller screens */
 }
 
 .home-intro-img {
     flex: 1;
     padding-right: 20px;
+    max-width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 .home-intro-img img {
@@ -21,4 +24,34 @@
     max-width: 600px;
     font-size: 1rem;
     line-height: 1.6;
+    box-sizing: border-box;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .home-intro {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .home-intro-img {
+        padding-right: 0;
+        max-width: 100%;
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .home-intro-text {
+        flex: 1;
+        text-align: center;
+        font-size: 0.9rem; /* Slightly smaller text on smaller screens */
+        max-width: 100%;
+    }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    .home-intro-text {
+        font-size: 0.85rem; /* Further reduce text size for small screens */
+    }
 }
