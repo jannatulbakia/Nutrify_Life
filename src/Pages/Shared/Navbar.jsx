@@ -169,7 +169,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
               <li><a href="/">Home</a></li>
               <li><a href="/diet">Dietary Guide</a></li>
-              
+              <li><a href="/profile">Profile</a></li>
               <li><a href="/caltrack">Calorie Track</a></li>
               <li><a href='/sickfood'>Sickness Diet</a></li>
               <li><a>Review</a></li>
@@ -186,7 +186,7 @@ const Navbar = () => {
             <li><a href="/caltrack">Calory Track</a></li>
             <li><a href="/profile">Profile</a></li>
             <li><a href='/sickfood'>Sickness Diet</a></li>
-            
+            <li><a href='/Nutryproducts'>Transform food</a></li>
             <li><a>Review</a></li>
           </ul>
         </div>
