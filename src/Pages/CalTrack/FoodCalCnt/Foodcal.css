@@ -1,98 +1,106 @@
+/* Foodcal.css */
 body {
-    background-color: #121212;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #1a1a1a; /* Slightly lighter black for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.2); /* Orange shadow */
+}
+
+h1 {
+  text-align: center;
+  color: #ffa500; /* Orange */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ffa500; /* Orange border */
+  border-radius: 4px;
+  background-color: #333; /* Dark input background */
+  color: #fff; /* White text */
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff8c00; /* Bright orange for focus */
+  box-shadow: 0 0 5px #ff8c00;
+}
+
+button {
+  background-color: #ffa500; /* Orange */
+  color: #000; /* Black text */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff8c00; /* Bright orange on hover */
+}
+
+#food-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#food-list li {
+  background-color: #333; /* Dark background for list items */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff; /* White text */
+}
+
+#food-list li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#total-calories {
+  color: #ffa500; /* Orange */
+}
+
+.result h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
   .container {
-    margin-top: 50px;
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    max-width: 400px;
-    width: 90%;
+    padding: 15px;
   }
-  
-  h1 {
-    color: #f0a500;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1em;
-    color: #fff;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    background-color: #2c2c2c;
-    color: #fff;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-  }
-  
+
   button {
-    background-color: #f0a500;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
     width: 100%;
     margin-top: 10px;
   }
-  
-  button:hover {
-    background-color: #e68900;
-  }
-  
-  .result {
-    margin-top: 20px;
-    color: #fff;
-  }
-  
-  ul#food-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  #food-list li {
-    background-color: #2c2c2c;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #444;
-  }
-  
-  #food-list li button {
-    background: none;
-    border: none;
-    color: #ff6b6b;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  #food-list li button:hover {
-    color: #ff4949;
-  }
-  
-  h3 {
-    color: #f0a500;
-    margin-top: 20px;
-    text-align: left;
-  }
-  
+}

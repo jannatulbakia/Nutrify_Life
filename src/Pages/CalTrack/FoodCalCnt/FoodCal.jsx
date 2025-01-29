@@ -5,6 +5,7 @@ function FoodCal() {
   const [foodItem, setFoodItem] = useState('');
   const [calories, setCalories] = useState('');
   const [foodList, setFoodList] = useState([]);
+  const [isEditing, setIsEditing] = useState(null);
 
   useEffect(() => {
     const storedFoodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
@@ -30,6 +31,29 @@ function FoodCal() {
     setCalories('');
   };
 
+  const handleEditFood = (index) => {
+    setIsEditing(index);
+    setFoodItem(foodList[index].food);
+    setCalories(foodList[index].calories);
+  };
+
+  const handleUpdateFood = (event) => {
+    event.preventDefault();
+    if (!foodItem || isNaN(calories)) {
+      alert('Please enter valid food item and calorie amount.');
+      return;
+    }
+
+    const updatedFoodList = foodList.map((item, index) =>
+      index === isEditing ? { food: foodItem, calories: parseInt(calories, 10) } : item
+    );
+
+    setFoodList(updatedFoodList);
+    setFoodItem('');
+    setCalories('');
+    setIsEditing(null);
+  };
+
   const handleRemoveFood = (index) => {
     const updatedList = foodList.filter((_, i) => i !== index);
     setFoodList(updatedList);
@@ -38,7 +62,7 @@ function FoodCal() {
   return (
     <div className="container">
       <h1>Food Calorie Calculator</h1>
-      <form onSubmit={handleAddFood}>
+      <form onSubmit={isEditing !== null ? handleUpdateFood : handleAddFood}>
         <div className="form-group">
           <label htmlFor="food">Food Item</label>
           <input
@@ -59,13 +83,14 @@ function FoodCal() {
             required
           />
         </div>
-        <button type="submit">Add Food</button>
+        <button type="submit">{isEditing !== null ? 'Update Food' : 'Add Food'}</button>
       </form>
       <div className="result">
         <ul id="food-list">
           {foodList.map((item, index) => (
             <li key={index}>
               {item.food}: {item.calories} calories{' '}
+              <button onClick={() => handleEditFood(index)}>Edit</button>{' '}
               <button onClick={() => handleRemoveFood(index)}>x</button>
             </li>
           ))}
@@ -76,4 +101,4 @@ function FoodCal() {
   );
 }
 
-export default FoodCal;
+export default FoodCal; 
