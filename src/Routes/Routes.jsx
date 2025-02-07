@@ -10,57 +10,81 @@ import LogIn from "../Pages/Registration/LogIn/LogIn";
 import Profile from "../Pages/Profile/Profile";
 import Diet from "../Pages/FoodClass/Diet";
 import NutryProducts from "../Pages/NutryProduct/NutryProducts";
+import AdminLayout from "../Layout/AdminLayout";
+import AdminHome from "../Pages/AdminPages/AdminHome/AdminHome";
+import UserDetails from "../Pages/AdminPages/UserDetails/UserDetails";
+import AdminAbouts from "../Pages/AdminPages/AdminAbouts/AdminAbouts";
 
 
-export const router =  createBrowserRouter([
-    {
-        path:"/",
-        element:<MainLayout/>,
-        children:[
-            {
-                path:"/",
-                element:<Home/>,
-             },
-            {
-               path:"/caltrack",
-               element:<CalTrack/>,
-            },
-            {
-                path:"/bmical",
-                element:<BmiCal/>,
-             },
-             {
-                path:"/foodcal",
-                element:<FoodCal/>,
-             },
-             {
-               path:"/signup",
-               element:<Signup/>,
+export const router = createBrowserRouter([
+   {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+         {
+            path: "/",
+            element: <Home />,
+         },
+         {
+            path: "/caltrack",
+            element: <CalTrack />,
+         },
+         {
+            path: "/bmical",
+            element: <BmiCal />,
+         },
+         {
+            path: "/foodcal",
+            element: <FoodCal />,
+         },
+         {
+            path: "/signup",
+            element: <Signup />,
 
-            },
-            {
-               path: "/login",
-               element: <LogIn/>,
-             },
-            {
-               path:"/profile",
-               element:<Profile/>,
-            },
-            {
-               path:"/diet",
-               element:<Diet/>,
-            },
-            {
-               path:"/nutryproducts",
-               element:<NutryProducts/>,
-            },
+         },
+         {
+            path: "/login",
+            element: <LogIn />,
+         },
+         {
+            path: "/profile",
+            element: <Profile />,
+         },
+         {
+            path: "/diet",
+            element: <Diet />,
+         },
+         {
+            path: "/nutryproducts",
+            element: <NutryProducts />,
+         },
 
 
-             {
-                path:"/sickfood",
-                element:<SickFood/>,
-             }
-            
-        ]
-    }
+         {
+            path: "/sickfood",
+            element: <SickFood />,
+         },
+         {
+            path: "/admin",
+            element: <AdminLayout />,
+            children: [
+               {
+                  path: "adminhome",
+                  element: <AdminHome />,
+               },
+               {
+                  path: "adminabout",
+                  element: <AdminAbouts/>,
+               },
+               
+               {
+                  path: "userdetails",
+                  element: <UserDetails/>,
+               },
+            ]
+         }
+
+      ],
+
+   }
 ])

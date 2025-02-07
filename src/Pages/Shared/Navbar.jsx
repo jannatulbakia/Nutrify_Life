@@ -172,6 +172,7 @@ const Navbar = () => {
               <li><a href="/profile">Profile</a></li>
               <li><a href="/caltrack">Calorie Track</a></li>
               <li><a href='/sickfood'>Sickness Diet</a></li>
+              <li><a href='/admin/adminhome'>Dash Board</a></li>
               <li><a>Review</a></li>
             </ul>
           </div>
@@ -187,11 +188,13 @@ const Navbar = () => {
             <li><a href="/profile">Profile</a></li>
             <li><a href='/sickfood'>Sickness Diet</a></li>
             <li><a href='/Nutryproducts'>Transform food</a></li>
+            <li><a href='/admin/adminhome'>Dash Board</a></li>
+            
             <li><a>Review</a></li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a href='/signup' className="btn btn-primary">Sign up</a>
+          <a href='/login' className="btn btn-primary">Get Started</a>
         </div>
       </div>
     </>

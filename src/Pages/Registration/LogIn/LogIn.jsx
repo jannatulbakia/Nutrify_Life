@@ -1,32 +1,44 @@
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import React, { useState } from "react";
-// import { auth } from "./firebase";
-// import { toast } from "react-toastify";
-// import SignInwithGoogle from "./signInWIthGoogle";
-
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-import { auth } from "../../../firebase/firebase";
+import { useState, useEffect } from "react";
+import { auth, db } from "../../../firebase/firebase"; // Make sure to import Firestore
 import { toast } from "react-toastify";
-
-
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { doc, getDoc } from "firebase/firestore"; // Import getDoc to fetch user data
 
 function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log("User logged in Successfully");
-      window.location.href = "/profile";
-      toast.success("User logged in Successfully", {
-        position: "top-center",
-      });
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Fetch user data from Firestore
+      const userDoc = await getDoc(doc(db, "Users", user.uid));
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        console.log("User logged in Successfully");
+
+        // Check user role and redirect accordingly
+        if (userData.role === "admin") {
+          navigate("/admin/adminhome");
+        } else {
+          navigate("/profile");
+        }
+        
+        toast.success("User logged in Successfully", {
+          position: "top-center",
+        });
+      } else {
+        toast.error("User data not found", {
+          position: "bottom-center",
+        });
+      }
     } catch (error) {
       console.log(error.message);
-
       toast.error(error.message, {
         position: "bottom-center",
       });
@@ -65,9 +77,8 @@ function LogIn() {
         </button>
       </div>
       <p className="forgot-password text-right">
-        New user <a href="/register">Register Here</a>
+        Are you a New Here <a href="/signup">Register Here</a>
       </p>
-      
     </form>
   );
 }
