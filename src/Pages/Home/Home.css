@@ -1,57 +1,109 @@
-.home-intro {
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #FFFAF0, #FFDAB9); /* Soft Peach Gradient */
+    height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-bottom: 50px;
-    padding-top: 10px;
-    flex-wrap: wrap; /* Allow the elements to wrap on smaller screens */
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #333; /* Darker text for contrast */
+    padding: 2rem;
+    border-radius: 10px;
 }
 
-.home-intro-img {
-    flex: 1;
-    padding-right: 20px;
-    max-width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.home-intro-img img {
-    width: 100%;
-    height: auto;
+h1 span {
+    color: #FF4D00; /* Vibrant orange */
 }
 
-.home-intro-text {
-    flex: 2;
-    max-width: 600px;
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
     font-size: 1rem;
-    line-height: 1.6;
-    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Media query for smaller screens */
+.primary {
+    background: #FF4D00;
+    color: white;
+}
+
+.secondary {
+    background: white;
+    color: #FF4D00;
+    border: 2px solid #FF4D00;
+}
+
+.primary:hover, .secondary:hover {
+    opacity: 0.8;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5rem;
+    background: #FFF5E1; /* Light Creamy Orange */
+}
+
+.about-text {
+    width: 50%;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.about-text span {
+    color: #FF4D00;
+}
+
+.about-image img {
+    width: 400px;
+    border-radius: 20px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .home-intro {
+    .hero {
+        height: 70vh;
+    }
+
+    .about-section {
         flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .home-intro-img {
-        padding-right: 0;
-        max-width: 100%;
-        margin-bottom: 20px; /* Add space below the image */
-    }
-
-    .home-intro-text {
-        flex: 1;
         text-align: center;
-        font-size: 0.9rem; /* Slightly smaller text on smaller screens */
-        max-width: 100%;
     }
-}
 
-/* Media query for very small screens */
-@media (max-width: 480px) {
-    .home-intro-text {
-        font-size: 0.85rem; /* Further reduce text size for small screens */
+    .about-text, .about-image {
+        width: 100%;
+    }
+
+    .about-image img {
+        width: 90%;
     }
 }

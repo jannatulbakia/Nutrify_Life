@@ -1,23 +1,43 @@
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
+
 const Home = () => {
+    const navigate = useNavigate(); // Fix: Call useNavigate inside the component
+
     return (
-        <div className="home-intro">
-            <div className="home-intro-img"> 
-                <img 
-                    src="https://img.freepik.com/premium-photo/flat-lay-photograph-diverse-healthy-foods-brown-background-concept-balanced-diet-natural_643966-783.jpg" 
-                    alt="" />
+        <div className="home-container">
+            {/* Hero Section */}
+            <div className="hero">
+                <div className="overlay">
+                    <h1>Welcome to <span>Nutrify Life</span></h1>
+                    <p>Your Journey to a Healthier Life Starts Here</p>
+
+                    <div className="cta-buttons">
+                        <button className="btn primary" onClick={() => navigate("/signup")}>
+                            Get Started
+                        </button>
+                        <button className="btn secondary" onClick={() => navigate("/caltrack")}>Track Your Calories</button>
+                    </div>
+                </div>
             </div>
 
-            <div className="home-intro-text">
-                <p>
-                    Welcome to <b>Nutrify Life</b>, your one-stop destination for comprehensive health and wellness solutions. In today’s fast-paced world, staying informed and proactive about your health is more important than ever. That’s why we’re here to empower you with the tools and resources you need to live a healthier, happier life.
-
-                    Our platform offers personalized health charts to support individuals managing illnesses, ensuring they have the right guidance for recovery and long-term well-being. With our intuitive calorie chart and calculator, you can seamlessly track your daily intake, understand your nutritional needs, and make informed dietary decisions.
-
-                    But that’s not all—our website is packed with valuable insights, practical tips, and innovative features designed to cater to diverse health needs. Whether you're focused on achieving your fitness goals, improving your diet, or enhancing your overall lifestyle, we’re committed to being your partner in every step of your health journey.
-
-                    Explore, learn, and thrive with Nutrify Life because your health matters, and we’re here to help you make the most of it.
-                </p>
+            {/* About Section */}
+            <div className="about-section">
+                <div className="about-text">
+                    <h2>About <span>Nutrify Life</span></h2>
+                    <p>
+                        Nutrify Life is your one-stop destination for comprehensive health and wellness solutions.
+                        Our platform offers personalized health charts, calorie tracking, and expert guidance to help
+                        you achieve your health goals effortlessly.
+                    </p>
+                    <button className="btn outline" >Learn More</button>
+                </div>
+                <div className="about-image">
+                    <img
+                        src="https://img.freepik.com/premium-photo/flat-lay-photograph-diverse-healthy-foods-brown-background-concept-balanced-diet-natural_643966-783.jpg"
+                        alt="Healthy Food"
+                    />
+                </div>
             </div>
         </div>
     );
