@@ -1,7 +1,7 @@
 /* Navbar General Styling */
 .navbar {
     padding: 1rem 2rem;
-    background: linear-gradient(to right, #FF9052, #FFC074); /* Softer and lighter orange gradient */
+    background: linear-gradient(to right, #FF9052, #FFC074);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -21,19 +21,12 @@
 }
 
 .navbar a:hover {
-    color: #FFF8E1; /* Lighter cream for soft contrast */
-}
-
-/* Active Link */
-.active a {
     color: #FFF8E1;
-    font-weight: bold;
-    border-bottom: 2px solid white;
 }
 
 /* Buttons */
 .btn-primary {
-    background: #FFAA76; /* Lighter, warm orange */
+    background: #FFAA76;
     color: white;
     border-radius: 8px;
     padding: 10px 20px;
@@ -41,30 +34,64 @@
 }
 
 .btn-primary:hover {
-    background-color: #FFD19A; /* Soft peachy shade */
+    background-color: #FFD19A;
 }
 
-/* Dropdown Menu */
-.dropdown-content {
+/* Mobile Dropdown Menu */
+.dropdown-menu {
     position: absolute;
+    top: 60px;
     left: 0;
-    top: 100%;
-    width: 200px;
+    width: 100%;
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     border-radius: 5px;
-    z-index: 200;
-    display: none;
 }
 
-/* Navbar on small screens */
+.dropdown-menu .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.dropdown-menu a {
+    color: #FF9052;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #FFD19A;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Mobile screen adjustments */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
+    .btn-sm {
+        padding: 6px 10px;
+        font-size: 0.8rem;
     }
 
-    .navbar-start a {
-        color: white;
-        font-size: 1.2rem;
+    .navbar .dropdown .btn-ghost {
+        padding: 4px;
+    }
+
+    .navbar .dropdown svg {
+        height: 18px;
+        width: 18px;
+    }
+
+    /* Fix the mobile button to the top left of the screen */
+    .navbar .navbar-start .btn-ghost {
+        position: fixed;
+        top: 10px;
+        left: 10px;  /* Button fixed to the left side */
+        z-index: 110;
     }
 }
