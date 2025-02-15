@@ -14,6 +14,7 @@ import AdminLayout from "../Layout/AdminLayout";
 import AdminHome from "../Pages/AdminPages/AdminHome/AdminHome";
 import UserDetails from "../Pages/AdminPages/UserDetails/UserDetails";
 import AdminAbouts from "../Pages/AdminPages/AdminAbouts/AdminAbouts";
+import LearnMore from "../Pages/About/LearnMore";
 
 
 export const router = createBrowserRouter([
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
          {
             path: "/",
             element: <Home />,
+         },
+         {
+            path: "/about",
+            element: <LearnMore/>,
          },
          {
             path: "/caltrack",
@@ -64,6 +69,7 @@ export const router = createBrowserRouter([
             path: "/sickfood",
             element: <SickFood />,
          },
+
          {
             path: "/admin",
             element: <AdminLayout />,
@@ -81,6 +87,7 @@ export const router = createBrowserRouter([
                   path: "userdetails",
                   element: <UserDetails/>,
                },
+
             ]
          }
 

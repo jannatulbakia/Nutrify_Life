@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
-    const navigate = useNavigate(); // Fix: Call useNavigate inside the component
+    const navigate = useNavigate(); // Hook for navigation
 
     return (
         <div className="home-container">
@@ -16,7 +16,9 @@ const Home = () => {
                         <button className="btn primary" onClick={() => navigate("/signup")}>
                             Get Started
                         </button>
-                        <button className="btn secondary" onClick={() => navigate("/caltrack")}>Track Your Calories</button>
+                        <button className="btn secondary" onClick={() => navigate("/caltrack")}>
+                            Track Your Calories
+                        </button>
                     </div>
                 </div>
             </div>
@@ -30,7 +32,12 @@ const Home = () => {
                         Our platform offers personalized health charts, calorie tracking, and expert guidance to help
                         you achieve your health goals effortlessly.
                     </p>
-                    <button className="btn outline" >Learn More</button>
+                    <button 
+                        className="btn outline" 
+                        onClick={() => window.open("/about", "_blank")}
+                    >
+                        Learn More
+                    </button>
                 </div>
                 <div className="about-image">
                     <img

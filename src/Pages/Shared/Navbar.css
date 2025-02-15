@@ -1,0 +1,70 @@
+/* Navbar General Styling */
+.navbar {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #FF9052, #FFC074); /* Softer and lighter orange gradient */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* Navbar Links */
+.navbar a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #FFF8E1; /* Lighter cream for soft contrast */
+}
+
+/* Active Link */
+.active a {
+    color: #FFF8E1;
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #FFAA76; /* Lighter, warm orange */
+    color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFD19A; /* Soft peachy shade */
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 200;
+    display: none;
+}
+
+/* Navbar on small screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-start a {
+        color: white;
+        font-size: 1.2rem;
+    }
+}
