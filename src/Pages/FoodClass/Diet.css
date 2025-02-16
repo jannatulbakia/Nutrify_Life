@@ -1,36 +1,35 @@
-/* Container */
+/* Main Container */
 .quiz-container {
+  margin-top: 180px;
+  margin-bottom: 110px;
   max-width: 650px;
-  margin: 20px auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 30px;
-  background-color: #fef9e4; /* Light yellow background */
+  background-color: #fef9e4;
   border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
   text-align: center;
-  border: 2px solid #ffbf00; /* Playful bright yellow border */
+  border: 2px solid #ffbf00;
 }
 
 /* Title */
 h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #000; /* Black color for title */
-  font-weight: 700; /* Bold title for more fun */
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* Quiz Step */
-.quiz-step {
-  margin-top: 30px;
-}
-
-/* Step Title */
+/* Step Titles */
 h3 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: #000; /* Black color for step titles */
+  font-size: 1.8rem;
+  color: #444;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 /* Options Container */
@@ -38,89 +37,112 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-/* Individual Option */
+/* Card Styling - Removed Circle */
 .option {
-  background: #ffffff;
-  border: 2px solid #ff7f50; /* Fun coral-orange border */
-  border-radius: 12px;
-  padding: 15px;
+  background: linear-gradient(135deg, #fff7e6, #fff);
+  border: 3px solid #ff7f50;
+  border-radius: 16px;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  width: 140px;
+  transition: all 0.3s ease-in-out;
+  width: 180px;
+  height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slight shadow for cards */
+  justify-content: center; /* Centers everything properly */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Option Image */
+/* Image - Full Rectangular, No Circle */
 .option img {
-  width: 100px;
+  width: 120px;
   height: 100px;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  transition: transform 0.3s ease; /* Fun scale effect */
+  object-fit: cover; /* Ensures proper image fit */
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Option Text with Emojis */
+/* Text Alignment */
 .option span {
-  font-size: 1.6rem; /* Larger emojis for more fun */
-  color: #000; /* Black text color */
-  font-weight: 600; /* Bold text for emphasis */
+  font-size: 1.4rem;
+  color: #222;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Hover Effect for Option */
+/* Hover Effects */
 .option:hover {
-  background-color: #ffebcd; /* Light peach background on hover */
-  border-color: #ff4500; /* Vibrant orange border on hover */
-  transform: translateY(-5px); /* Lift card slightly */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Darker shadow for hover */
+  background: linear-gradient(135deg, #ffeadb, #fff5e6);
+  border-color: #ff4500;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
 }
 
 .option:hover img {
-  transform: scale(1.1); /* Fun scaling effect on hover */
+  transform: scale(1.05);
 }
 
 /* Submit Button */
 .btn-submit {
-  background-color: #ff6347; /* Vibrant tomato-orange button */
-  color: #fff;
-  font-size: 1.1rem;
+  background: #ff6347;
+  color: white;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 8px;
-  padding: 12px 30px;
+  border-radius: 10px;
+  padding: 14px 35px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 20px;
+  margin-top: 25px;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-/* Submit Button Hover */
 .btn-submit:hover {
-  background-color: #ff4500; /* Darker orange when hovered */
-  transform: scale(1.05); /* Slight scale-up effect */
+  background: #ff4500;
+  transform: scale(1.08);
 }
 
-/* Display Dietary Advice */
+/* Dietary Advice Text */
 .quiz-step p {
-  font-size: 1.2rem;
-  color: #000; /* Black text color */
+  font-size: 1.3rem;
+  color: #333;
   line-height: 1.6;
   margin-top: 20px;
   font-weight: 500;
+  padding: 10px;
+  background: rgba(255, 239, 213, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
-footer {
-  background-color: #3e3a3a; /* Dark footer background */
-  color: white;
-  padding: 15px 0;
-  text-align: center;
-  margin-top: 40px;
-  border-radius: 0 0 12px 12px;
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .option {
+    width: 90%;
+    height: auto;
+  }
+
+  .option img {
+    width: 100px;
+    height: 80px;
+  }
+
+  .option span {
+    font-size: 1.2rem;
+  }
 }

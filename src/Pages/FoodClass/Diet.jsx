@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './Diet.css';
 // Sample images for each age group (use actual URLs for your images)
@@ -36,7 +37,7 @@ const Diet = () => {
     } else if (ageGroup === 'youngAdults') {
       info += '💪 Recommended for Young Adults (19-30 years): Focus on protein, healthy fats, and maintaining an active metabolism. 🥗';
     } else if (ageGroup === 'middleAged') {
-      info += '🧑‍⚖️ Recommended for Middle-Aged Adults (31-50 years): Focus on heart-healthy fats, fiber for digestion, and vitamins like B12 and D. 🥑';
+      info += '🧑‍⚖ Recommended for Middle-Aged Adults (31-50 years): Focus on heart-healthy fats, fiber for digestion, and vitamins like B12 and D. 🥑';
     } else if (ageGroup === 'seniors') {
       info += '👵 Recommended for Seniors (51+ years): Focus on easy-to-digest foods, high fiber, calcium, vitamin D, and antioxidants for joint and immune support. 🍲';
     }
@@ -74,7 +75,7 @@ const Diet = () => {
             </button>
             <button onClick={() => onHandleClick('ageGroup', 'middleAged')} className="option">
               <img src={ageImages.middleAged} alt="Middle Aged" />
-              <span>31-50 years 🧑‍⚖️</span>
+              <span>31-50 years 🧑‍⚖</span>
             </button>
             <button onClick={() => onHandleClick('ageGroup', 'seniors')} className="option">
               <img src={ageImages.seniors} alt="Seniors" />
