@@ -1,0 +1,130 @@
+/* Profile container with background image */
+.profile-container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: url('https://www.morelandobgyn.com/hubfs/Imported_Blog_Media/GettyImages-854725402-1.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Default text color */
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text visibility */
+    z-index: 1;
+    filter: blur(8px); /* Apply the blur effect */
+  }
+  
+  .profile-container > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Heading */
+  h3 {
+    font-size: 28px;
+    color: #090909; /* Black font color */
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* User info section with white text color */
+  .user-info-class {
+    color: #fff; /* White color for text inside the user-info-class */
+  }
+  .user-info-class h3{
+    color: #fff; /* White color for text inside the user-info-class */
+  }
+   
+  /* User details section */
+  .profile-details {
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  /* Text styles for user details */
+  .profile-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff; /* White color for the paragraph text */
+  }
+  
+  /* Image style */
+  .profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image img {
+    border-radius: 50%;
+    width: 40%;
+    max-width: 150px;
+    height: auto;
+    border: 4px solid #fff; /* White border around the image */
+  }
+  
+  /* Logout Button Styles */
+  .profile-logout {
+    display: inline-block;
+    background-color: #fff;
+    color: #ff7e5f;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+  }
+  
+  .profile-logout:hover {
+    background-color: #ff7e5f;
+    color: white;
+  }
+  
+  .profile-logout:focus {
+    outline: none;
+  }
+  
+  /* Login fallback container */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .profile-container {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    .profile-image img {
+      width: 50%;
+    }
+  
+    h3 {
+      font-size: 22px;
+    }
+  
+    .profile-logout {
+      width: 100%;
+    }
+  }
+  

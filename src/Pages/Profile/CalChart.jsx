@@ -58,23 +58,33 @@ const CalChart = () => {
             const updatedFoods = [...addedFoods, { ...selectedFood, quantity }];
             setAddedFoods(updatedFoods);
 
-            // Calculate the total calories for the added foods
+            // Recalculate the total calories for the added foods
             const newTotalCalories = updatedFoods.reduce(
                 (acc, food) => acc + (food.calories * food.quantity), 
                 0
             );
-            setTotalCalories(newTotalCalories);
+            setTotalCalories(newTotalCalories); // Update the total calories state
             setQuantity(1); // Reset quantity input
             setSelectedFood(null); // Reset selected food after adding
         }
     };
 
+    // Function to update the total calories for all added foods
+    const handleUpdateTotalCalories = () => {
+        const newTotalCalories = addedFoods.reduce(
+            (acc, food) => acc + (food.calories * food.quantity), 
+            0
+        );
+        setTotalCalories(newTotalCalories); // Update the total calories state
+    };
+
     return (
-        <div className="calculator-container">
+        <div className="calculator-container-profile">
             <h2>Calorie Calculator</h2>
 
             {/* Search Input */}
             <input
+                className="input-data"
                 type="text"
                 placeholder="Search for food..."
                 value={searchQuery}
@@ -105,7 +115,7 @@ const CalChart = () => {
 
             {/* Food selection and quantity */}
             {selectedFood && (
-                <div className="food-selection">
+                <div className="food-selection-profile">
                     <h3>Selected Food: {selectedFood.name}</h3>
                     <p>{selectedFood.quantity} {selectedFood.unit}</p>
                     <p>{selectedFood.calories} cal per {selectedFood.unit}</p>
@@ -122,14 +132,17 @@ const CalChart = () => {
             {/* List of added foods and total calories */}
             {addedFoods.length > 0 && (
                 <div className="added-foods">
-                    <h3>Foods Added</h3>
+                    <h3 >Foods Added</h3>
                     {addedFoods.map((food, index) => (
                         <div key={index} className="added-food-item">
                             <p>{food.quantity} {food.unit} of {food.name}</p>
                             <p>{food.calories * food.quantity} cal</p>
                         </div>
                     ))}
+                    {/* Display total calories */}
                     <h3>Total Calories: {totalCalories} cal</h3>
+                    {/* Button to update the total calories */}
+                    <button onClick={handleUpdateTotalCalories}>Update Total Calories</button>
                 </div>
             )}
         </div>

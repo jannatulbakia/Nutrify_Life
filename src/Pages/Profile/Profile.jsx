@@ -3,6 +3,7 @@ import { auth, db } from "../../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import LogIn from "../Registration/LogIn/LogIn";
 import CalChart from "./CalChart";
+import "./Profile.css"
 
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
@@ -34,35 +35,37 @@ function Profile() {
     }
   }
   return (
-    <div>
+    <div className="profile-container">
       {userDetails ? (
         <>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className="profile-image">
             <img
               src={userDetails.photo}
               width={"40%"}
+              alt="User"
               style={{ borderRadius: "50%" }}
             />
           </div>
-          <h3>Hello {userDetails.firstName}. Be healthy</h3>
-          <div>
-            <p>Email: {userDetails.email}</p>
-            <p>First Name: {userDetails.firstName}</p>
-            {/* <p>Last Name: {userDetails.lastName}</p> */}
-
-            <CalChart/>
+          <div className="user-info-class">
+            <h3>Hello {userDetails.firstName}. Be healthy</h3>
+            <div className="profile-details">
+              <p>Email: {userDetails.email}</p>
+              <p>First Name: {userDetails.firstName}</p>
+              {/* <p>Last Name: {userDetails.lastName}</p> */}
+            </div>
+            <CalChart />
           </div>
-          <button className="btn btn-primary" onClick={handleLogout}>
+          <button className="profile-logout" onClick={handleLogout}>
             Logout
           </button>
         </>
       ) : (
-        <p>
-            <LogIn/>
+        <p className="login-container">
+          <LogIn />
         </p>
       )}
-      
     </div>
   );
 }
+
 export default Profile;

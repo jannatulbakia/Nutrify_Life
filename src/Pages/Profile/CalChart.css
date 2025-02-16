@@ -1,129 +1,153 @@
-/* General Styles */
-.calculator-container {
-    background-color: black;
-    color: white;
+.calculator-container-profile {
     padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Allow this to take up available space */
+    overflow: hidden; /* Prevent content from overflowing */
 }
 
 h2 {
+    color: #333;
     text-align: center;
-    font-size: 24px;
     margin-bottom: 20px;
-    color: white;
-}
-
-h3 {
-    font-size: 20px;
-    margin-top: 20px;
 }
 
 /* Search Input */
-input[type="text"] {
+.input-data {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px; /* Reduced bottom margin to make the dropdown closer */
-    border: 2px solid #fff;
-    border-radius: 4px;
-    background-color: #333;
-    color: white;
-    position: relative; /* Ensures dropdown is positioned relative to this */
-}
-
-input[type="text"]:focus {
+    margin-bottom: 20px;
+    border: 1px solid #ffa500; /* Orange border */
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
     outline: none;
-    border-color: #f0b400;
 }
 
-input[type="number"] {
-    width: 80px;
-    padding: 5px;
-    margin-top: 10px;
-    border: 2px solid #fff;
-    border-radius: 4px;
-    background-color: #333;
-    color: white;
+.input-data::placeholder {
+    color: #ffa500; /* Orange color for placeholder text */
 }
 
-button {
-    background-color: #f0b400;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+.input-data:focus {
+    border-color: #ff7f00; /* Darker orange when focused */
+    box-shadow: 0 0 5px rgba(255, 127, 0, 0.5);
 }
 
-button:hover {
-    background-color: #d59c00;
-}
-
-/* Food List (Dropdown) */
+/* Dropdown List */
 .dropdown-list {
-    border: 1px solid #fff;
-    position: absolute; /* Absolute positioning for dropdown */
-    max-height: 150px; /* Smaller size for the dropdown */
+    max-height: 200px;
     overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute;
     width: 100%;
-    background-color: #222;
-    z-index: 1;
-    border-radius: 4px;
-    top: 40px; /* Positioned directly below the input field */
-    left: 0; /* Align it to the left of the input */
+    z-index: 10;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Dropdown Item Styling */
 .dropdown-item {
-    padding: 8px 10px;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
     cursor: pointer;
-    color: white;
 }
 
 .dropdown-item:hover {
-    background-color: #444;
+    background-color: #ff7f00; /* Hover effect with orange */
+    color: white;
 }
 
-/* Added Foods Section */
-.added-foods {
-    margin-top: 30px;
-    color: white; 
+/* Selected Food Info */
+.food-selection-profile {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.added-food-item {
+.food-selection-profile h3 {
+    color: #333;
+}
+
+.food-selection-profile p {
+    color: #555;
     margin-bottom: 10px;
 }
 
-.added-food-item p {
+.food-selection-profile input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 16px;
 }
 
+.food-selection-profile button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.food-selection-profile button:hover {
+    background-color: #ff5400; /* Darker orange on hover */
+}
+
+/* List of Added Foods */
+.added-foods {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.added-foods h3{
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.added-food-item p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.added-foods h3{
+    font-size: 18px;
+}
+
 .added-foods h3 {
-    font-size: 22px;
+    font-weight: bold;
+    color: #333;
 }
 
-/* Total Calories Text */
-.added-foods h3, .added-food-item p {
-    color: white;
-}
-
-/* Food Calorie Component */
-.Food-Calorie {
+/* General Styles */
+input, select {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    margin: 10px 0;
-    background-color: #333;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
 }
 
-.Food-Calorie p {
-    margin: 5px 0;
-    color: white;
-}
-
-.Food-Calorie span {
-    color: #f0b400;
+/* Error message styles */
+.error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
 }
