@@ -1,126 +1,176 @@
+/* Main Container */
+.signup-container {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: 50px;
+}
 
-  
-  form {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #222; /* Dark background for the form */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: #fff; /* White text inside the form */
+/* Left Section - Info */
+.signup-info-section {
+  flex: 1; /* Equal width */
+  background: linear-gradient(90deg, #ffb480, #ff9a8b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+  min-height: 100%;
+  overflow: hidden; /* Ensure the text stays inside */
+  flex-direction: column; /* Ensures elements are stacked vertically */
+}
+
+.signup-info-section h2,
+.signup-info-section p {
+  display: block;
+  width: 100%; /* Ensures they take the full width of the container */
+  max-width: 100%; /* Prevent overflow */
+  white-space: normal; /* Allows wrapping to the next line */
+  overflow: hidden;
+}
+
+/* Typing Animation */
+.signup-info-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  animation: typing 4s steps(30) 1s 1 normal both;
+  font-family: 'Courier New', monospace;
+}
+
+.signup-info-section p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 80%;
+  animation: typing 6s steps(40) 1s 1 normal both;
+  font-family: 'Courier New', monospace;
+}
+
+/* Typing Effect Animation */
+@keyframes typing {
+  from {
+    width: 0;
   }
-  
-  h3 {
+  to {
+    width: 100%;
+  }
+}
+
+/* Right Section - Form */
+.signup-form-section {
+  flex: 1; /* Equal width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  min-height: 100%;
+}
+
+/* Form Styling */
+form {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h3 {
+  color: #ffb480;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.signup-info {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.signup-info label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffb480;
+}
+
+.signup-info input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ffb480;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.signup-info input:focus {
+  border-color: #ff6a81;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 107, 129, 0.5);
+}
+
+/* Submit Button */
+.signup-submit {
+  margin-top: 20px;
+}
+
+.bttn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #ffb480, #ff9a8b);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.bttn:hover {
+  background: linear-gradient(90deg, #ff9a8b, #ffb480);
+  transform: scale(1.05);
+}
+
+/* Login Redirect */
+.forgot-password {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.forgot-password a {
+  color: #ffb480;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .signup-info-section {
+    padding: 30px;
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #fff; /* White color for the heading */
   }
-  
-  .mb-3 {
-    margin-bottom: 1.5rem;
+
+  .signup-form-section {
+    padding: 30px;
   }
-  
-  label {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ddd; /* Light gray color for labels */
+
+  form {
+    margin-top: 0;
   }
-  
-  input.form-control {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #555; /* Gray border color */
-    background-color: #333; /* Dark input background */
-    color: #fff; /* White text for input fields */
-    margin-top: 5px;
-  }
-  
-  input.form-control:focus {
-    border-color: #f60; /* Orange border on focus */
-    outline: none;
-  }
-  
-  button.btn {
-    background-color: #f60; /* Orange background */
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 100%; /* Full width for the button */
-    margin-top: 15px;
-  }
-  
-  button.btn:hover {
-    background-color: #e55c00; /* Darker orange on hover */
-  }
-  
-  .forgot-password {
-    text-align: right;
-    font-size: 0.9rem;
-    color: #ddd; /* Light gray color for forgot-password text */
-  }
-  
-  .forgot-password a {
-    color: #f60; /* Orange color for the link */
-    text-decoration: none;
-  }
-  
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    form {
-      max-width: 90%;
-      padding: 15px;
-    }
-  
-    h3 {
-      font-size: 1.25rem;
-    }
-  
-    .mb-3 {
-      margin-bottom: 1.2rem;
-    }
-  
-    input.form-control {
-      font-size: 0.95rem;
-    }
-  
-    button.btn {
-      font-size: 0.95rem;
-      padding: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    form {
-      max-width: 100%;
-      padding: 10px;
-    }
-  
-    h3 {
-      font-size: 1.1rem;
-    }
-  
-    .mb-3 {
-      margin-bottom: 1rem;
-    }
-  
-    input.form-control {
-      font-size: 0.9rem;
-    }
-  
-    button.btn {
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-  }
-  
+}

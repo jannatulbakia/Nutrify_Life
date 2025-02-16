@@ -59,36 +59,48 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <h3>Sign Up</h3>
+    <div className="signup-container">
+      {/* Informative Section */}
+      <section className="signup-info-section">
+        <h2>Join Us Today!</h2>
+        <p>
+          Signing up gives you exclusive access to personalized features, a supportive community, and top-tier resources.  
+          Get started now and experience the best platform for your needs!
+        </p>
+      </section>
 
-      <div className="mb-3">
-        <label>First name</label>
-        <input type="text" className="form-control" placeholder="First name" onChange={(e) => setFname(e.target.value)} required />
-      </div>
+      {/* Signup Form */}
+      <form onSubmit={handleRegister}>
+        <h3>Sign Up</h3>
 
-      <div className="mb-3">
-        <label>Last name</label>
-        <input type="text" className="form-control" placeholder="Last name" onChange={(e) => setLname(e.target.value)} />
-      </div>
+        <div className="signup-info">
+          <label>First Name</label>
+          <input type="text" placeholder="First name" onChange={(e) => setFname(e.target.value)} required />
+        </div>
 
-      <div className="mb-3">
-        <label>Email address</label>
-        <input type="email" className="form-control" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} required />
-      </div>
+        <div className="signup-info">
+          <label>Last Name</label>
+          <input type="text" placeholder="Last name" onChange={(e) => setLname(e.target.value)} />
+        </div>
 
-      <div className="mb-3">
-        <label>Password</label>
-        <input type="password" className="form-control" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} required />
-      </div>
+        <div className="signup-info">
+          <label>Email Address</label>
+          <input type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} required />
+        </div>
 
-      <div className="d-grid">
-        <button type="submit" className="btn btn-primary">Sign Up</button>
-      </div>
-      <p className="forgot-password text-right">
-        Already registered? <a href="/login">Log In</a>
-      </p>
-    </form>
+        <div className="signup-info">
+          <label>Password</label>
+          <input type="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} required />
+        </div>
+
+        <div className="signup-submit">
+          <button type="submit" className="bttn">Sign Up</button>
+        </div>
+        <p className="forgot-password">
+          Already registered? <a href="/login">Log In</a>
+        </p>
+      </form>
+    </div>
   );
 }
 

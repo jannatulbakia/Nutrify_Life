@@ -1,0 +1,88 @@
+.containerr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set to 100vh to take full viewport height */
+    width: 100%; /* Full width */
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.form-containerr {
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%; /* Allows form container to take full width */
+    max-width: 700px; /* Set a maximum width */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-containerr h2 {
+    margin-bottom: 10px;
+    color: black; /* Set header font color to black */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    color: black; /* Set label font color to black */
+    display: block; /* Ensure labels are block elements and take up the full width */
+    margin-bottom: 5px; /* Adds space between label and input */
+}
+
+input, select {
+    width: 100%; /* Ensures input takes full width of its container */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black; /* Set input and select font color to black */
+}
+
+.termss {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btnn {
+    width: 100%; /* Ensures button takes full width of its container */
+    background-color: #e1602c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btnn:hover {
+    background-color: #f93737;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    text-align: center;
+    color: black; /* Set forgot password text to black */
+}
+
+.image-containerr {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 57px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-containerr img {
+    width: 100%;
+    max-width: 100%;
+    height: 650px;
+    border-radius: 10px;
+}
