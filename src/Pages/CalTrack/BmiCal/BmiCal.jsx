@@ -1,168 +1,69 @@
-import React, { useState } from 'react';
-import './BmiCal.css';
+import { useState } from "react";
 
-const BmiCal = () => {
-  const [age, setAge] = useState('');
-  const [gender, setGender] = useState('male');
-  const [weight, setWeight] = useState('');
-  const [height, setHeight] = useState('');
-  const [activity, setActivity] = useState('1');
-  const [totalCalories, setTotalCalories] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+const CalorieCalculator = () => {
+  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("male");
+  const [activity, setActivity] = useState("1.2");
+  const [calories, setCalories] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const calculateCalories = () => {
+    const weightKg = parseFloat(weight);
+    const heightCm = parseFloat(height);
+    const ageYears = parseInt(age);
+    const activityFactor = parseFloat(activity);
 
-    setLoading(true);
-    setError('');
-    setTotalCalories('');
+    if (!weightKg || !heightCm || !ageYears) {
+      alert("Please enter valid inputs.");
+      return;
+    }
 
-    setTimeout(() => {
-      if (age === '' || weight === '' || height === '' || age < 15 || age > 80) {
-        setError('Please make sure the values you entered are correct');
-        setLoading(false);
-        return;
-      }
+    let BMR;
+    if (gender === "male") {
+      BMR = 10 * weightKg + 6.25 * heightCm - 5 * ageYears + 5;
+    } else {
+      BMR = 10 * weightKg + 6.25 * heightCm - 5 * ageYears - 161;
+    }
 
-      let calculatedCalories;
-      const weightNum = parseFloat(weight);
-      const heightNum = parseFloat(height);
-      const ageNum = parseFloat(age);
-
-      if (gender === 'male') {
-        if (activity === '1') {
-          calculatedCalories = 1.2 * (66.5 + 13.75 * weightNum + 5.003 * heightNum - 6.755 * ageNum);
-        } else if (activity === '2') {
-          calculatedCalories = 1.375 * (66.5 + 13.75 * weightNum + 5.003 * heightNum - 6.755 * ageNum);
-        } else if (activity === '3') {
-          calculatedCalories = 1.55 * (66.5 + 13.75 * weightNum + 5.003 * heightNum - 6.755 * ageNum);
-        } else if (activity === '4') {
-          calculatedCalories = 1.725 * (66.5 + 13.75 * weightNum + 5.003 * heightNum - 6.755 * ageNum);
-        } else {
-          calculatedCalories = 1.9 * (66.5 + 13.75 * weightNum + 5.003 * heightNum - 6.755 * ageNum);
-        }
-      } else {
-        if (activity === '1') {
-          calculatedCalories = 1.2 * (655 + 9.563 * weightNum + 1.850 * heightNum - 4.676 * ageNum);
-        } else if (activity === '2') {
-          calculatedCalories = 1.375 * (655 + 9.563 * weightNum + 1.850 * heightNum - 4.676 * ageNum);
-        } else if (activity === '3') {
-          calculatedCalories = 1.55 * (655 + 9.563 * weightNum + 1.850 * heightNum - 4.676 * ageNum);
-        } else if (activity === '4') {
-          calculatedCalories = 1.725 * (655 + 9.563 * weightNum + 1.850 * heightNum - 4.676 * ageNum);
-        } else {
-          calculatedCalories = 1.9 * (655 + 9.563 * weightNum + 1.850 * heightNum - 4.676 * ageNum);
-        }
-      }
-
-      setTotalCalories(calculatedCalories);
-      setLoading(false);
-    }, 2000);
+    const dailyCalories = BMR * activityFactor;
+    setCalories(dailyCalories.toFixed(2));
   };
 
   return (
-    <div className="container">
-      <div className="card">
-        <h1 className="heading display-5 pb-3">BMI & Calorie Calculator</h1>
-        <form onSubmit={handleSubmit}>
+    <div style={{ maxWidth: "400px", margin: "auto", textAlign: "center", padding: "20px", border: "1px solid #ddd", borderRadius: "10px" }}>
+      <h2>Calorie Intake Calculator</h2>
+      <label className="bmiLabel">Height (cm): </label>
+      <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} placeholder="Enter height" /><br /><br />
 
-          <div className="form-group">
-            <label htmlFor="age">Age</label>
-            <input
-              type="number"
-              id="age"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              placeholder="Ages 15-80"
-            />
-          </div>
+      <label className="bmiLabel">Weight (kg): </label>
+      <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} placeholder="Enter weight" /><br /><br />
 
-          <fieldset className="form-group">
-            <legend>Gender</legend>
-            <div className="custom-control custom-radio">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                checked={gender === 'male'}
-                onChange={() => setGender('male')}
-              />
-              <label htmlFor="male">Male</label>
-            </div>
-            <div className="custom-control custom-radio">
-              <input
-                type="radio"
-                id="female"
-                name="gender"
-                checked={gender === 'female'}
-                onChange={() => setGender('female')}
-              />
-              <label htmlFor="female">Female</label>
-            </div>
-          </fieldset>
+      <label className="bmiLabel">Age: </label>
+      <input type="number" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Enter age" /><br /><br />
 
-          <div className="form-group">
-            <label htmlFor="weight">Weight (kg)</label>
-            <input
-              type="number"
-              id="weight"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              placeholder="In kilograms"
-            />
-          </div>
+      <label className="bmiLabel">Gender: </label>
+      <select value={gender} onChange={(e) => setGender(e.target.value)}>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select><br /><br />
 
-          <div className="form-group">
-            <label htmlFor="height">Height (cm)</label>
-            <input
-              type="number"
-              id="height"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-              placeholder="In centimeters"
-            />
-          </div>
+      <label className="bmiLabel">Activity Level: </label>
+      <select value={activity} onChange={(e) => setActivity(e.target.value)}>
+        <option value="1.2">Sedentary (Little or no exercise)</option>
+        <option value="1.375">Lightly Active (1-3 days/week)</option>
+        <option value="1.55">Moderately Active (3-5 days/week)</option>
+        <option value="1.725">Very Active (6-7 days/week)</option>
+        <option value="1.9">Super Active (Athlete/Heavy Work)</option>
+      </select><br /><br />
 
-          <div className="form-group">
-            <label htmlFor="activity">Activity Level</label>
-            <select
-              id="activity"
-              value={activity}
-              onChange={(e) => setActivity(e.target.value)}
-            >
-              <option value="1">Sedentary (little or no exercise)</option>
-              <option value="2">Lightly active (light exercise/sports 1-3 days/week)</option>
-              <option value="3">Moderately active (moderate exercise/sports 3-5 days/week)</option>
-              <option value="4">Very active (hard exercise/sports 6-7 days a week)</option>
-              <option value="5">Extra active (very hard exercise/sports & physical job or 2x training)</option>
-            </select>
-          </div>
+      <button onClick={calculateCalories} style={{ padding: "10px 20px", background: "#007BFF", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}>
+        Calculate
+      </button><br /><br />
 
-          <div className="form-group">
-            <input
-              type="submit"
-              value="Calculate Calories"
-            />
-          </div>
-
-        </form>
-
-        {loading && <div id="loading">Loading...</div>}
-        {error && <div className="alert-danger">{error}</div>}
-        {totalCalories && (
-          <div id="results">
-            <h5>Total Calories</h5>
-            <input
-              type="number"
-              value={totalCalories}
-              disabled
-            />
-          </div>
-        )}
-      </div>
+      {calories && <h3>Daily Calorie Intake: {calories} kcal</h3>}
     </div>
   );
 };
 
-export default BmiCal;
+export default CalorieCalculator;
