@@ -1,79 +1,102 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Styles */
+/* body {
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text color for general content */
-}
+    background-color: #fff;
+} */
 
+/* Main Container */
 .App {
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-h1 {
-    color: #fff; /* White text for the heading */
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #FFFAF0, #FFDAB9); /* Soft Peach Gradient */
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #333; /* Darker text for contrast */
+    padding: 2rem;
+    border-radius: 10px;
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #FF4D00; /* Vibrant orange */
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Food Card Styles */
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 .card {
-    background-color: #333; /* Dark background for cards */
-    border-radius: 15px; /* Rounded corners */
-    padding: 25px;
-    width: 280px;
-    text-align: left;
-    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #FFF5E1; /* Light Creamy Orange */
+    border: 1px solid #FFDAB9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 30%; /* Responsive card size */
+    min-width: 280px; /* Minimum width for cards */
+    transition: transform 0.3s, background 0.3s; /* Smooth transition */
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Hover effect: slightly raise the card */
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* More intense shadow on hover */
+    transform: translateY(-5px); /* Elevates the card */
+    background: #FFDAB9; /* Darker background on hover */
 }
 
 .card h2 {
-    font-size: 1.6em;
-    color: #ff6347; /* Tomato red for the card title */
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .card ul {
+    list-style-type: none;
     padding: 0;
-    list-style: none;
-    color: #ccc; /* Light grey text for list items */
 }
 
 .card li {
-    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
 }
 
-.card .button {
-    background-color: yellow; /* Button color matching the card title */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
 
-.card .button:hover {
-    background-color: #e55347; /* Darker shade of red on hover */
-}
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* New class for sickness name */
-.sickness-name {
-    color: #928833; /* Yellow color for sickness name */
-    font-weight: bold;
+    .card {
+        width: 100%;
+    }
 }
