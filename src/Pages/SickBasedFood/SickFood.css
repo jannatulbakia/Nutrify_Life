@@ -1,11 +1,12 @@
 .App {
-    max-width: 1200px;
+    max-width: 300vh;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
     position: relative;
     background: url('https://img.freepik.com/free-vector/hand-drawn-world-health-day-background_23-2149306514.jpg') no-repeat center center/cover;
-    z-index: 1;
+    margin-top: 70px;
+    width: 100%;
 }
 
 h1 {
