@@ -1,26 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';  
 
 const Navbar = ({ role }) => {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  // Toggle the menu visibility when the button is clicked
+  const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
+
   return (
     <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-sm lg:hidden">  
+          {/* Ghost Button */}
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-sm lg:hidden"
+            onClick={toggleMenu}  // Toggle the dropdown menu
+          >  
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"  // Reduced icon size
+              className="h-4 w-4" // Reduced icon size
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor">
+              stroke="currentColor"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16" />
+                d="M4 6h16M4 12h8m-8 6h16" 
+              />
             </svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content">
+
+          {/* Conditionally render the dropdown menu with peach background */}
+          <ul
+            tabIndex={0}
+            className={`menu menu-sm dropdown-content ${isMenuVisible ? 'show' : ''}`}
+          >
             <li><a href="/">Home</a></li>
             <li><a href="/diet">Dietary Guide</a></li>
             <li><a href="/profile">Profile</a></li>

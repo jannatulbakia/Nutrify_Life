@@ -5,7 +5,6 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    
     top: 0;
     z-index: 100;
     border-radius: 0px 0px 10px 10px;
@@ -39,34 +38,43 @@
 }
 
 /* Mobile Dropdown Menu */
-.dropdown-menu {
+.dropdown-content {
+    display: none; /* Initially hidden */
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background: white;
+    background: #fff; /* White box background */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 5px;
+    z-index: 120; /* Ensure the dropdown is above other content */
 }
 
-.dropdown-menu .menu {
+.show {
+    display: block; /* Show when dropdown is toggled */
+}
+
+.menu-sm {
     display: flex;
     flex-direction: column;
-    text-align: center;
     gap: 10px;
 }
 
-.dropdown-menu a {
+.menu-sm li {
+    padding: 10px;
+    text-align: left;
+}
+
+.menu-sm li a {
     color: #FF9052;
     font-size: 1rem;
     font-weight: bold;
-    padding: 10px;
     display: block;
     transition: background 0.3s;
 }
 
-.dropdown-menu a:hover {
+.menu-sm li a:hover {
     background: #FFD19A;
     color: white;
     border-radius: 5px;
@@ -95,4 +103,5 @@
         left: 10px;  /* Button fixed to the left side */
         z-index: 110;
     }
+    
 }
