@@ -1,31 +1,36 @@
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
+import { FaSignOutAlt } from "react-icons/fa";
+import "./AdminLayout.css"; 
 
 const AdminLayout = () => {
     return (
-        <div className="flex h-screen">
-            {/* Sidebar */}
-            <div className="w-1/4 bg-gray-800 text-white p-4">
-                <h1 className="text-xl font-bold mb-4">Admin Panel</h1>
-                <nav>
+        <div className="admin-container">
+            <div className="admin-sidebar">
+                <h1 className="admin-title">Admin</h1>
+                <nav className="admin-nav">
                     <ul>
-                        <li className="mb-2">
-                            <Link to="/admin/adminhome" className="block p-2 hover:bg-gray-700 rounded">Admin Home</Link>
-                        </li>
-                        {/* Add more admin routes here */}
-                        <li className="mb-2">
-                            <Link to="/admin/userdetails" className="block p-2 hover:bg-gray-700 rounded">User Details</Link>
-                        </li>
-                        <li className="mb-2">
-                            <Link to="/admin/adminabout" className="block p-2 hover:bg-gray-700 rounded">Admin About</Link>
-                        </li>
+                        <li><Link to="/admin/adminhome" className="admin-link">Home</Link></li>
+                        <li><Link to="/admin/userdetails" className="admin-link">Users</Link></li>
+                        <li><Link to="/admin/adminabout" className="admin-link">About</Link></li>
                     </ul>
                 </nav>
+                <button className="admin-logout">
+                    <FaSignOutAlt className="icon" /> Logout
+                </button>
             </div>
 
-            {/* Main Content Area */}
-            <div className="bg-black">
-                <Outlet />
+            <div className="admin-main">
+                <header className="admin-header">
+                    <h2 className="admin-heading">NutrifyLife - Admin Panel</h2>
+                    <button className="admin-logout-btn">
+                        <FaSignOutAlt className="icon" /> Logout
+                    </button>
+                </header>
+
+                <main className="admin-content">
+                    <Outlet />
+                </main>
             </div>
         </div>
     );

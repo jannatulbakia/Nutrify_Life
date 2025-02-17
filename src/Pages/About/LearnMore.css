@@ -9,7 +9,7 @@ body {
 /* Learn More Section */
 .learn-more-container {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 90px auto;
     padding: 3rem;
     background: linear-gradient(to right, #FFFAF0, #FFDAB9); /* Soft Peach to Light Orange Gradient */
     border-radius: 15px;
