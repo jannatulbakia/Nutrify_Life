@@ -16,6 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 80px;
+  background: url('https://t3.ftcdn.net/jpg/04/17/20/66/360_F_417206643_g0KblsWNpUpgL5Yu25agZG72qRA21Z4Y.jpg') no-repeat center center/cover;
 }
 
 .products h2 {

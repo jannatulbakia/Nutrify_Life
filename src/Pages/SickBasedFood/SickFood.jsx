@@ -86,7 +86,7 @@ const foods = [
 
 const FoodCard = ({ title, items }) => {
   return (
-    <div className="card">
+    <div className="bakia">
       <h2>{title}</h2>
       <ul>
         {items.map((item, index) => (
@@ -101,7 +101,7 @@ function SickFood() {
   return (
     <div className="App">
       <h1>Sickness-Based Food Suggestions</h1>
-      <div className="card-container">
+      <div className="puspita">
         {foods.map((food, index) => (
           <FoodCard key={index} title={food.title} items={food.items} />
         ))}

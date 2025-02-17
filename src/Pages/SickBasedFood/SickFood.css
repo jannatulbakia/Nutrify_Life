@@ -1,102 +1,83 @@
-/* General Styles */
-/* body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-} */
-
-/* Main Container */
 .App {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(to right, #FFFAF0, #FFDAB9); /* Soft Peach Gradient */
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     position: relative;
-    color: #333; /* Darker text for contrast */
-    padding: 2rem;
-    border-radius: 10px;
+    background: url('https://img.freepik.com/free-vector/hand-drawn-world-health-day-background_23-2149306514.jpg') no-repeat center center/cover;
+    z-index: 1;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 10px;
-}
-
-h1 span {
-    color: #FF4D00; /* Vibrant orange */
-}
-
-p {
-    font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #444;
+    color: #333;
 }
 
-/* Food Card Styles */
-.card-container {
+/* Food Card Container */
+.puspita {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
-.card {
-    background: #FFF5E1; /* Light Creamy Orange */
-    border: 1px solid #FFDAB9;
+/* Food Card */
+.bakia {
+    background:bisque; /* Semi-transparent white */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 10px;
-    flex: 1 1 30%; /* Responsive card size */
-    min-width: 280px; /* Minimum width for cards */
-    transition: transform 0.3s, background 0.3s; /* Smooth transition */
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Elevates the card */
-    background: #FFDAB9; /* Darker background on hover */
+.bakia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.card h2 {
+.bakia h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: #e26f23; /* Warm accent color */
     margin-bottom: 10px;
 }
 
-.card ul {
-    list-style-type: none;
+.bakia ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.card li {
+.bakia li {
     font-size: 1rem;
-    color: #555;
-    margin: 5px 0;
+    color: #0f0a0a;
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Bullet icon */
+.bakia li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #4caf50; /* Green check mark */
+    font-weight: bold;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero {
-        height: 70vh;
-    }
-
-    .card-container {
+    .puspita {
         flex-direction: column;
         align-items: center;
     }
 
-    .card {
-        width: 100%;
+    .bakia {
+        width: 90%;
+        max-width: 350px;
     }
 }
