@@ -1,58 +1,61 @@
 .container {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 650px;
+  margin: 100px auto 20px; 
+  text-align: center;
   padding: 20px;
-  background-color: #f1b08d, #dfb581; /* Slightly lighter black for contrast */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.2); /* Orange shadow */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fdf2e9; 
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  text-align: center;
-  color: #ffa500; /* Orange */
+  color: #ff8c00; 
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 label {
+  font-size: 16px;
+  font-weight: 500;
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
-  color: #fff; /* White label text */
+  color: #333;
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  border: 1px solid #ffa500; /* Orange border */
-  border-radius: 4px;
-  background-color: #333; /* Dark input background */
-  color: #fff; /* White text */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 5px 0;
+  border: 1px solid #ffa500; 
+  border-radius: 5px;
+  background: white;
+  color: #333;
 }
 
 input:focus {
   outline: none;
-  border-color: #ff8c00; /* Bright orange for focus */
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.6);
+  border-color: #ff8c00; 
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
 }
 
 button {
-  background-color: #ffa500; /* Orange */
-  color: #000; /* Black text */
-  padding: 10px 15px;
+  padding: 10px 20px;
+  background: #ff8c00; 
+  color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #ff8c00; /* Bright orange on hover */
+  background: #e67e22; 
   transform: scale(1.05);
 }
 
@@ -63,44 +66,36 @@ button:hover {
 }
 
 #food-list li {
-  background-color: #333; /* Dark background for list items */
+  background: white;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius: 4px;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff; /* White text */
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #food-list li button {
-  margin-left: 10px;
   padding: 5px 10px;
   font-size: 12px;
-  background-color: #ff4500; /* Red delete button */
-  color: #fff;
+  background: #ff4500; 
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 #food-list li button:hover {
-  background-color: #ff0000; /* Darker red on hover */
+  background: #cc3700; 
 }
 
-#total-calories {
-  color: #ffa500; /* Orange */
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  margin-top: 10px;
-}
-
-.result h3 {
-  text-align: center;
-  margin-top: 20px;
-  color: #ffa500;
+h3 {
+  color: #ff8c00; 
+  font-size: 18px;
+  margin-top: 15px;
 }
 
 @media (max-width: 600px) {

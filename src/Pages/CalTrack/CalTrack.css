@@ -1,0 +1,100 @@
+
+.backgroundImage{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JLqHM0-bA6x885nJxeC63Ef1vDTH_9S2lQ&s') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+
+.caltrack-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+
+.intro {
+    margin: 100px;
+    text-align: center;
+    max-width: 1000px;
+    background: bisque; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.intro h1 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+.intro p, .intro ul {
+    font-size: 18px;
+    color: black;
+    line-height: 1.5;
+}
+
+.intro ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.intro li::before {
+    content: "✅";
+    margin-right: 8px;
+}
+
+.caltrack-container p {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(238, 175, 58); 
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .intro {
+        max-width: 90%;
+    }
+
+    .intro h1 {
+        font-size: 26px;
+    }
+
+    .intro p, .intro ul {
+        font-size: 16px;
+    }
+
+    .caltrack-container p {
+        font-size: 24px;
+    }
+}
