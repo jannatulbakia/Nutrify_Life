@@ -17,12 +17,11 @@ function SignUp() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      // Register user with Firebase Authentication
+  
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
       if (user) {
-        // Store user details in Firebase Firestore
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
           firstName: fname,
@@ -31,7 +30,6 @@ function SignUp() {
           role: "user",
         });
 
-        // Send user details to MongoDB backend
         const response = await fetch("http://localhost:5000/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -46,8 +44,6 @@ function SignUp() {
 
         const data = await response.json();
         toast.success("User Registered Successfully!!", { position: "top-center" });
-
-        // Redirect to login page after successful registration
         navigate("/login");
       }
     } catch (error) {
@@ -60,7 +56,6 @@ function SignUp() {
 
   return (
     <div className="signup-container">
-      {/* Informative Section */}
       <section className="signup-info-section">
         <h2>Join Us Today!</h2>
         <p>
@@ -69,7 +64,6 @@ function SignUp() {
         </p>
       </section>
 
-      {/* Signup Form */}
       <form onSubmit={handleRegister}>
         <h3>Sign Up</h3>
 

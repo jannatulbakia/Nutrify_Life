@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './Navbar.css';  
 
 const Navbar = () => {
-  // console.log("navbar",role)
+
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [role, setRole] = useState(null);
-  // Toggle the menu visibility when the button is clicked
+
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
   useEffect(() => {
     const userData = localStorage.getItem('user');
     if (userData) {
       const parsedData = JSON.parse(userData);
-      setRole(parsedData.role); // Set the role from local storage
+      setRole(parsedData.role); 
     }
   }, []);
 
@@ -19,16 +19,15 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
-          {/* Ghost Button */}
           <div
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-sm lg:hidden"
-            onClick={toggleMenu}  // Toggle the dropdown menu
+            onClick={toggleMenu} 
           >  
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4" // Reduced icon size
+              className="h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -41,8 +40,6 @@ const Navbar = () => {
               />
             </svg>
           </div>
-
-          {/* Conditionally render the dropdown menu with peach background */}
           <ul
             tabIndex={0}
             className={`menu menu-sm dropdown-content ${isMenuVisible ? 'show' : ''}`}

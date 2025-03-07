@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Set to 100vh to take full viewport height */
-    width: 100%; /* Full width */
+    height: 100vh; 
+    width: 100%; 
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
 }
@@ -12,8 +12,8 @@
     padding: 30px;
     padding-left: 50px;
     padding-right: 50px;
-    width: 100%; /* Allows form container to take full width */
-    max-width: 700px; /* Set a maximum width */
+    width: 100%; 
+    max-width: 700px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
 
 .form-containerr h2 {
     margin-bottom: 10px;
-    color: black; /* Set header font color to black */
+    color: black; 
 }
 
 .form-group {
@@ -29,18 +29,18 @@
 }
 
 label {
-    color: black; /* Set label font color to black */
-    display: block; /* Ensure labels are block elements and take up the full width */
-    margin-bottom: 5px; /* Adds space between label and input */
+    color: black; 
+    display: block;
+    margin-bottom: 5px; 
 }
 
 input, select {
-    width: 100%; /* Ensures input takes full width of its container */
+    width: 100%; 
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: black; /* Set input and select font color to black */
+    color: black; 
 }
 
 .termss {
@@ -50,7 +50,7 @@ input, select {
 }
 
 .btnn {
-    width: 100%; /* Ensures button takes full width of its container */
+    width: 100%; 
     background-color: #e1602c;
     color: white;
     padding: 10px;
@@ -67,7 +67,7 @@ input, select {
 .forgot-password {
     margin-top: 10px;
     text-align: center;
-    color: black; /* Set forgot password text to black */
+    color: black;
 }
 
 .image-containerr {

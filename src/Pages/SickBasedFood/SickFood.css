@@ -16,7 +16,6 @@ h1 {
     color: #333;
 }
 
-/* Food Card Container */
 .puspita {
     display: flex;
     flex-wrap: wrap;
@@ -25,9 +24,8 @@ h1 {
     margin-top: 20px;
 }
 
-/* Food Card */
 .bakia {
-    background:bisque; /* Semi-transparent white */
+    background:bisque;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -43,7 +41,7 @@ h1 {
 
 .bakia h2 {
     font-size: 1.5rem;
-    color: #e26f23; /* Warm accent color */
+    color: #e26f23; 
     margin-bottom: 10px;
 }
 
@@ -61,16 +59,14 @@ h1 {
     position: relative;
 }
 
-/* Bullet icon */
 .bakia li::before {
     content: "✔";
     position: absolute;
     left: 0;
-    color: #4caf50; /* Green check mark */
+    color: #4caf50; 
     font-weight: bold;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .puspita {
         flex-direction: column;

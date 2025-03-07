@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate(); 
 
     return (
         <div className="home-container">
-            {/* Hero Section */}
+           
             <div className="hero">
                 <div className="overlay">
                     <h1>Welcome to <span>Nutrify Life</span></h1>
@@ -23,7 +23,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* About Section */}
+           
             <div className="about-section">
                 <div className="about-text">
                     <h2>About <span>Nutrify Life</span></h2>
