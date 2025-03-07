@@ -1,4 +1,4 @@
-/* Footer Styling */
+
 .footer {
     background: linear-gradient(to right, #FF9A6E, #FFB75F);
     padding: 2rem 0;
@@ -8,20 +8,15 @@
     position: relative;
     z-index: 100;
 }
-
-/* Footer Content */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Footer Text */
 .footer p {
     font-size: 1rem;
     margin: 0;
 }
-
-/* Social Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -39,7 +34,6 @@
     color: #FFF5E1;
 }
 
-/* Footer on small screens */
 @media (max-width: 768px) {
     .footer {
         padding: 1.5rem 0;

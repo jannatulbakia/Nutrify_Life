@@ -1,4 +1,4 @@
-/* Navbar General Styling */
+
 .navbar {
     padding: 1rem 2rem;
     background: linear-gradient(to right, #FF9052, #FFC074);
@@ -10,7 +10,6 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-/* Navbar Links */
 .navbar a {
     font-size: 1rem;
     font-weight: 600;
@@ -24,7 +23,6 @@
     color: #FFF8E1;
 }
 
-/* Buttons */
 .btn-primary {
     background: #FFAA76;
     color: white;
@@ -37,22 +35,21 @@
     background-color: #FFD19A;
 }
 
-/* Mobile Dropdown Menu */
 .dropdown-content {
-    display: none; /* Initially hidden */
+    display: none; 
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background: #fff; /* White box background */
+    background: #fff; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 5px;
-    z-index: 120; /* Ensure the dropdown is above other content */
+    z-index: 120; 
 }
 
 .show {
-    display: block; /* Show when dropdown is toggled */
+    display: block; 
 }
 
 .menu-sm {
@@ -80,7 +77,6 @@
     border-radius: 5px;
 }
 
-/* Mobile screen adjustments */
 @media (max-width: 768px) {
     .btn-sm {
         padding: 6px 10px;
@@ -96,11 +92,10 @@
         width: 18px;
     }
 
-    /* Fix the mobile button to the top left of the screen */
     .navbar .navbar-start .btn-ghost {
         position: fixed;
         top: 10px;
-        left: 10px;  /* Button fixed to the left side */
+        left: 10px; 
         z-index: 110;
     }
     
