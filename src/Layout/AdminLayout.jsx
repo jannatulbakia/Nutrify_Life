@@ -1,9 +1,16 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
-import "./AdminLayout.css"; 
+import "./AdminLayout.css";
 
 const AdminLayout = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("adminToken"); 
+        navigate("/login");
+    };
+
     return (
         <div className="admin-container">
             <div className="admin-sidebar">
@@ -15,7 +22,7 @@ const AdminLayout = () => {
                         <li><Link to="/admin/adminabout" className="admin-link">About</Link></li>
                     </ul>
                 </nav>
-                <button className="admin-logout">
+                <button className="admin-logout" onClick={handleLogout}>
                     <FaSignOutAlt className="icon" /> Logout
                 </button>
             </div>
@@ -23,7 +30,7 @@ const AdminLayout = () => {
             <div className="admin-main">
                 <header className="admin-header">
                     <h2 className="admin-heading">NutrifyLife - Admin Panel</h2>
-                    <button className="admin-logout-btn">
+                    <button className="admin-logout-btn" onClick={handleLogout}>
                         <FaSignOutAlt className="icon" /> Logout
                     </button>
                 </header>

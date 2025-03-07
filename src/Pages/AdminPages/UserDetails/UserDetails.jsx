@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { FaEye, FaEdit, FaTrash } from 'react-icons/fa';
+import './UserDetails.css';  
 
 const UserDetails = () => {
     const [users, setUsers] = useState([]);
@@ -9,6 +10,9 @@ const UserDetails = () => {
     const [viewModalOpen, setViewModalOpen] = useState(false);
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [userData, setUserData] = useState({ firstName: '', lastName: '', email: '' });
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [usersPerPage] = useState(7);
 
     useEffect(() => {
         fetchUsers();
@@ -62,13 +66,18 @@ const UserDetails = () => {
         Swal.fire('Updated!', 'User has been updated.', 'success');
     };
 
+    const indexOfLastUser = currentPage * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
-        <div className="container mx-auto p-6">
-            <h2 className="text-2xl font-bold mb-4">User Details</h2>
-            <div className="overflow-x-auto w-full">
-                <table className="table table-zebra w-full">
+        <div className="containers">
+            <h2 className="title">User Details</h2>
+            <div className="table-container">
+                <table className="user-table">
                     <thead>
-                        <tr className="bg-gray-100">
+                        <tr className="table-header">
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
@@ -77,33 +86,57 @@ const UserDetails = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.length > 0 ? (
-                            users.map(user => (
+                        {currentUsers.length > 0 ? (
+                            currentUsers.map(user => (
                                 <tr key={user._id}>
                                     <td>{user.firstName}</td>
                                     <td>{user.lastName}</td>
                                     <td>{user.email}</td>
                                     <td>{user.role}</td>
-                                    <td className="flex space-x-2">
-                                        <FaEye onClick={() => handleView(user)} className="text-blue-600 cursor-pointer" />
-                                        <FaEdit onClick={() => handleEdit(user)} className="text-green-600 cursor-pointer" />
-                                        <FaTrash onClick={() => handleDelete(user._id)} className="text-red-600 cursor-pointer" />
+                                    <td className="actions">
+                                        <FaEye onClick={() => handleView(user)} className="view-icon" />
+                                        <FaEdit onClick={() => handleEdit(user)} className="edit-icon" />
+                                        <FaTrash onClick={() => handleDelete(user._id)} className="delete-icon" />
                                     </td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="4" className="text-center p-4">No users found</td>
+                                <td colSpan="5" className="no-users">No users found</td>
                             </tr>
                         )}
                     </tbody>
                 </table>
             </div>
-
+            <div className="pagination">
+                <button
+                    onClick={() => paginate(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="pagination-button prev"
+                >
+                    Prev
+                </button>
+                {[...Array(Math.ceil(users.length / usersPerPage))].map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => paginate(index + 1)}
+                        className={`pagination-button page ${currentPage === index + 1 ? 'active' : ''}`}
+                    >
+                        {index + 1}
+                    </button>
+                ))}
+                <button
+                    onClick={() => paginate(currentPage + 1)}
+                    disabled={currentPage === Math.ceil(users.length / usersPerPage)}
+                    className="pagination-button next"
+                >
+                    Next
+                </button>
+            </div>
             {viewModalOpen && (
-                <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-                        <h2 className="text-lg font-bold mb-4">User Details</h2>
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h2 className="modal-title">User Details</h2>
                         {selectedUser && (
                             <div>
                                 <p><strong>First Name:</strong> {selectedUser.firstName}</p>
@@ -111,45 +144,45 @@ const UserDetails = () => {
                                 <p><strong>Email:</strong> {selectedUser.email}</p>
                             </div>
                         )}
-                        <button onClick={() => setViewModalOpen(false)} className="btn mt-4">Close</button>
+                        <button onClick={() => setViewModalOpen(false)} className="modal-button">Close</button>
                     </div>
                 </div>
             )}
 
             {editModalOpen && (
-                <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-                        <h2 className="text-lg font-bold mb-4">Edit User</h2>
-                        <label className="block mb-2">
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h2 className="modal-title">Edit User</h2>
+                        <label className="input-label">
                             First Name:
                             <input
                                 type="text"
                                 value={userData.firstName}
                                 onChange={(e) => setUserData({ ...userData, firstName: e.target.value })}
-                                className="input input-bordered w-full mb-4"
+                                className="input-field"
                             />
                         </label>
-                        <label className="block mb-2">
+                        <label className="input-label">
                             Last Name:
                             <input
                                 type="text"
                                 value={userData.lastName}
                                 onChange={(e) => setUserData({ ...userData, lastName: e.target.value })}
-                                className="input input-bordered w-full mb-4"
+                                className="input-field"
                             />
                         </label>
-                        <label className="block mb-2">
+                        <label className="input-label">
                             Email:
                             <input
                                 type="email"
                                 value={userData.email}
                                 onChange={(e) => setUserData({ ...userData, email: e.target.value })}
-                                className="input input-bordered w-full mb-4"
+                                className="input-field"
                             />
                         </label>
-                        <div className="flex justify-end space-x-2">
-                            <button onClick={handleUpdate} className="btn btn-primary">Update</button>
-                            <button onClick={() => setEditModalOpen(false)} className="btn">Cancel</button>
+                        <div className="modal-actions">
+                            <button onClick={handleUpdate} className="modal-button update">Update</button>
+                            <button onClick={() => setEditModalOpen(false)} className="modal-button cancel">Cancel</button>
                         </div>
                     </div>
                 </div>
