@@ -1,146 +1,104 @@
-/* body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
+.learn-more-container {
+    max-width: 2000px;
+    margin: auto;
+    padding: 90px;
+    background: #fff8dc;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-.learn-more-container {
-    max-width: 900px;
-    margin: 90px auto;
-    padding: 3rem;
-    background: linear-gradient(to right, #FFFAF0, #FFDAB9); 
-    border-radius: 15px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+.learn-more-container:hover {
+    transform: scale(1.02);
 }
 
 .learn-more-container h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #333;
+    font-size: 2.5rem;
+    color: #222;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: bold;
 }
+
 .learn-more-container h1 span {
-    color: #FF4D00; 
+    color: rgb(215, 152, 34);
+    font-weight: bold;
 }
 
 .learn-more-container p {
-    font-size: 1.3rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: #444;
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+}
+
+.learn-more-container h2 {
+    font-size: 2rem;
+    color: rgb(215, 152, 34);
+    margin-top: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .learn-more-container ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 30px;
-    text-align: left;
+    margin-top: 20px;
 }
 
 .learn-more-container ul li {
-    margin: 18px 0;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    font-weight: 500;
-    color: #333;
-}
-.learn-more-container ul li::before {
-    content: "✔";
-    color: #FF4D00; 
-    margin-right: 12px;
-    font-size: 1.4rem;
-}
-.learn-more-container p:last-child {
-    font-size: 1.4rem;
-    color: #333;
-    font-weight: 600;
-    margin-top: 40px;
-}
-
-.learn-more-container .btn {
-    padding: 12px 28px;
-    font-size: 1.1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    margin-top: 40px;
-    display: inline-block;
 }
 
-.learn-more-container .primary {
-    background: #FF4D00;
+.learn-more-container ul li:hover {
+    background: blanchedalmond;
+    color: goldenrod;
+    transform: translateY(-3px);
+}
+
+
+.learn-more-container ul li:hover::before {
     color: white;
 }
 
-.learn-more-container .secondary {
-    background: white;
-    color: #FF4D00;
-    border: 2px solid #FF4D00;
+.learn-more-container p:last-child {
+    font-size: 1.3rem;
+    color: #222;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-.learn-more-container .primary:hover, .learn-more-container .secondary:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
-}
-
-nav {
-    background: linear-gradient(to right, #FF4D00, #FF6A13);
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    margin: 0 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-nav a:hover {
-    color: #FFF5E1; 
-}
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .learn-more-container {
-        padding: 2rem;
+        padding: 20px;
     }
 
     .learn-more-container h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
-    .learn-more-container p {
-        font-size: 1rem;
+    .learn-more-container h2 {
+        font-size: 1.5rem;
     }
 
-    .learn-more-container ul {
-        font-size: 1rem;
+    .learn-more-container p,
+    .learn-more-container ul li {
+        font-size: 1.1rem;
     }
 
-    .learn-more-container .btn {
-        width: 100%;
-        padding: 14px 28px;
-        font-size: 1.2rem;
+    .learn-more-container ul li {
+        width: 90%;
     }
-
-    nav {
-        padding: 1rem;
-    }
-
-    nav a {
-        font-size: 1rem;
-        margin: 0 10px;
-    }
-} */
+}
