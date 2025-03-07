@@ -16,7 +16,7 @@ const NutryProducts = () => {
             }
             const data = await response.json();
             setProducts(data.myData);
-            console.log(data.myData); // Set the data (foods) in state
+            // console.log(data.myData); // Set the data (foods) in state
           } catch (error) {
             // Log the error type in the console
             console.error('Error type:', error.name);

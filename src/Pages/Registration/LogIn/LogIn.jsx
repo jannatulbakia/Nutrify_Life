@@ -20,8 +20,8 @@ const LogIn = () => {
 
             if (userDoc.exists()) {
                 const userData = userDoc.data();
-                console.log("User logged in Successfully");
-
+                
+                localStorage.setItem('user', JSON.stringify(userData));
                 if (userData.role === "admin") {
                     navigate("/admin/adminhome");
                 } else {
@@ -37,7 +37,7 @@ const LogIn = () => {
                 });
             }
         } catch (error) {
-            console.log(error.message);
+            // console.log(error.message);
             toast.error(error.message, {
                 position: "bottom-center",
             });

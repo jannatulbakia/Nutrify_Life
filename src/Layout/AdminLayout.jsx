@@ -7,7 +7,7 @@ const AdminLayout = () => {
     return (
         <div className="admin-container">
             <div className="admin-sidebar">
-                <h1 className="admin-title">Admin</h1>
+                <h1 className="pt-24 admin-title">Admin</h1>
                 <nav className="admin-nav">
                     <ul>
                         <li><Link to="/admin/adminhome" className="admin-link">Home</Link></li>

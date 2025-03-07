@@ -1,22 +1,19 @@
-/* General Styles */
-body {
+/* body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
 }
 
-/* Learn More Section */
 .learn-more-container {
     max-width: 900px;
     margin: 90px auto;
     padding: 3rem;
-    background: linear-gradient(to right, #FFFAF0, #FFDAB9); /* Soft Peach to Light Orange Gradient */
+    background: linear-gradient(to right, #FFFAF0, #FFDAB9); 
     border-radius: 15px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
 .learn-more-container h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -25,12 +22,10 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .learn-more-container h1 span {
-    color: #FF4D00; /* Vibrant Orange */
+    color: #FF4D00; 
 }
 
-/* Paragraph */
 .learn-more-container p {
     font-size: 1.3rem;
     color: #555;
@@ -38,7 +33,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* List Style */
 .learn-more-container ul {
     list-style-type: none;
     padding: 0;
@@ -55,16 +49,12 @@ body {
     font-weight: 500;
     color: #333;
 }
-
-/* Bullet Points (Icons) */
 .learn-more-container ul li::before {
     content: "✔";
-    color: #FF4D00; /* Vibrant Orange */
+    color: #FF4D00; 
     margin-right: 12px;
     font-size: 1.4rem;
 }
-
-/* Footer Text */
 .learn-more-container p:last-child {
     font-size: 1.4rem;
     color: #333;
@@ -72,7 +62,6 @@ body {
     margin-top: 40px;
 }
 
-/* Buttons */
 .learn-more-container .btn {
     padding: 12px 28px;
     font-size: 1.1rem;
@@ -100,9 +89,8 @@ body {
     transform: scale(1.05);
 }
 
-/* Navbar */
 nav {
-    background: linear-gradient(to right, #FF4D00, #FF6A13); /* Gradient Orange Background */
+    background: linear-gradient(to right, #FF4D00, #FF6A13);
     padding: 1rem 2rem;
     position: fixed;
     top: 0;
@@ -122,10 +110,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #FFF5E1; /* Light Cream */
+    color: #FFF5E1; 
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .learn-more-container {
         padding: 2rem;
@@ -157,4 +143,4 @@ nav a:hover {
         font-size: 1rem;
         margin: 0 10px;
     }
-}
+} */

@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';  
 
-const Navbar = ({ role }) => {
+const Navbar = () => {
+  // console.log("navbar",role)
   const [isMenuVisible, setIsMenuVisible] = useState(false);
-
+  const [role, setRole] = useState(null);
   // Toggle the menu visibility when the button is clicked
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
+  useEffect(() => {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      const parsedData = JSON.parse(userData);
+      setRole(parsedData.role); // Set the role from local storage
+    }
+  }, []);
 
   return (
     <div className="navbar">

@@ -9,15 +9,15 @@ function Profile() {
   const [userDetails, setUserDetails] = useState(null);
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
-      console.log(user);
+      // console.log(user);
 
       const docRef = doc(db, "Users", user.uid);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
         setUserDetails(docSnap.data());
-        console.log(docSnap.data());
+        // console.log(docSnap.data());
       } else {
-        console.log("User is not logged in");
+        // console.log("User is not logged in");
       }
     });
   };
@@ -27,11 +27,12 @@ function Profile() {
 
   async function handleLogout() {
     try {
+      localStorage.removeItem('user'); 
       await auth.signOut();
       window.location.href = "/login";
-      console.log("User logged out successfully!");
+      // console.log("User logged out successfully!");
     } catch (error) {
-      console.error("Error logging out:", error.message);
+      // console.error("Error logging out:", error.message);
     }
   }
   return (
