@@ -100,7 +100,6 @@ const UserDetails = () => {
                 </table>
             </div>
 
-            {/* View Modal */}
             {viewModalOpen && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -117,7 +116,6 @@ const UserDetails = () => {
                 </div>
             )}
 
-            {/* Edit Modal */}
             {editModalOpen && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-96">

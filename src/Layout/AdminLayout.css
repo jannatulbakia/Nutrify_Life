@@ -1,11 +1,11 @@
 .admin-container {
     display: flex;
-    height: 100vh; /* Full height */
+    height: 100vh; 
 }
 
 .admin-sidebar {
-    width: 200px; /* Fixed width for sidebar */
-    background-color: #f8f9fa; /* Light background color */
+    width: 200px; 
+    background-color: #f8f9fa; 
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
@@ -26,7 +26,7 @@
 
 .admin-link {
     text-decoration: none;
-    color: #007bff; /* Link color */
+    color: #007bff; 
 }
 
 .admin-link:hover {
@@ -34,17 +34,17 @@
 }
 
 .admin-logout {
-    margin-top: auto; /* Push the button to the bottom */
+    margin-top: auto; 
     background: none;
     border: none;
-    color: #dc3545; /* Logout button color */
+    color: #dc3545; 
     cursor: pointer;
 }
 
 .admin-main {
-    flex: 1; /* Take the remaining space */
+    flex: 1; 
     padding: 20px;
-    background-color: #fff; /* White background for main content */
+    background-color: #fff; 
 }
 
 .admin-header {
@@ -60,10 +60,10 @@
 .admin-logout-btn {
     background: none;
     border: none;
-    color: #dc3545; /* Logout button color */
+    color: #dc3545; 
     cursor: pointer;
 }
 
 .admin-content {
-    margin-top: 20px; /* Space between header and content */
+    margin-top: 20px; 
 }
