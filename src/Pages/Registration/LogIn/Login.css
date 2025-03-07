@@ -86,3 +86,36 @@ input, select {
     height: 650px;
     border-radius: 10px;
 }
+
+@media (max-width: 1024px) {
+    .containerr {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-containerr {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-containerr {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .containerr {
+        padding: 10px;
+    }
+    
+    .form-containerr {
+        padding: 15px;
+    }
+    
+    .btnn {
+        padding: 8px;
+    }
+}
