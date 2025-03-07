@@ -9,7 +9,7 @@ function Profile() {
   const [userDetails, setUserDetails] = useState(null);
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
-      // console.log(user);
+  
 
       const docRef = doc(db, "Users", user.uid);
       const docSnap = await getDoc(docRef);
@@ -52,7 +52,7 @@ function Profile() {
             <div className="profile-details">
               <p>Email: {userDetails.email}</p>
               <p>First Name: {userDetails.firstName}</p>
-              {/* <p>Last Name: {userDetails.lastName}</p> */}
+           
             </div>
             <CalChart />
           </div>
