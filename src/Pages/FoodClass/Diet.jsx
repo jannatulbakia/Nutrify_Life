@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Diet.css";
 
+
+
 const ageGroups = [
   { id: "children", label: "1-5 years 🧒", advice: "High-calorie foods for growth, calcium for bone development, and vitamin D." },
   { id: "adolescents", label: "6-18 years 👦", advice: "Emphasize protein for growth, iron for menstruating girls, and calcium for bone health." },
@@ -82,7 +84,9 @@ const Diet = () => {
           </div>
         </div>
       </div>
+      
     </div>
+    
   );
 };
 

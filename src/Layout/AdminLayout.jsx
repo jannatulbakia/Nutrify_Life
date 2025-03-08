@@ -19,7 +19,7 @@ const AdminLayout = () => {
                     <ul>
                         <li><Link to="/admin/adminhome" className="admin-link">Home</Link></li>
                         <li><Link to="/admin/userdetails" className="admin-link">Users</Link></li>
-                        <li><Link to="/admin/adminabout" className="admin-link">About</Link></li>
+                        <li><Link to="/admin/adminfood" className="admin-link">Food Info</Link></li>
                     </ul>
                 </nav>
                 <button className="admin-logout" onClick={handleLogout}>

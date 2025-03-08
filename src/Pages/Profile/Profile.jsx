@@ -32,14 +32,7 @@ function Profile() {
     <div className="profile-container">
       {userDetails ? (
         <>
-          <div className="profile-image">
-            <img
-              src={userDetails.photo}
-              width={"40%"}
-              alt="User"
-              style={{ borderRadius: "50%" }}
-            />
-          </div>
+          
           <div className="user-info-class">
             <h3>Hello {userDetails.firstName}. Be healthy</h3>
             <div className="profile-details">

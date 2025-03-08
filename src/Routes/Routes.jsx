@@ -12,8 +12,10 @@ import NutryProducts from "../Pages/NutryProduct/NutryProducts";
 import AdminLayout from "../Layout/AdminLayout";
 import AdminHome from "../Pages/AdminPages/AdminHome/AdminHome";
 import UserDetails from "../Pages/AdminPages/UserDetails/UserDetails";
-import AdminAbouts from "../Pages/AdminPages/AdminAbouts/AdminAbouts";
+
 import LearnMore from "../Pages/About/LearnMore";
+import AdminFoodAdd from "../Pages/AdminPages/AdminFoodAdd/AdminFoodAdd";
+import SuggesstionDoc from "../Pages/FoodClass/SuggesstionDoc/SuggesstionDoc";
 
 
 export const router = createBrowserRouter([
@@ -55,6 +57,10 @@ export const router = createBrowserRouter([
             element: <Diet />,
          },
          {
+            path: "/suggestions",
+            element: <SuggesstionDoc/>
+         },
+         {
             path: "/nutryproducts",
             element: <NutryProducts />,
          },
@@ -74,8 +80,8 @@ export const router = createBrowserRouter([
                   element: <AdminHome />,
                },
                {
-                  path: "adminabout",
-                  element: <AdminAbouts/>,
+                  path: "adminfood",
+                  element: <AdminFoodAdd/>,
                },
                
                {

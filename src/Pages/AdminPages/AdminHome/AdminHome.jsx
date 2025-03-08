@@ -35,8 +35,8 @@ const AdminHome = () => {
                             <a href="userdetails" className="button">Go to Users</a>
                         </div>
                         <div className="card widget">
-                            <h3>About Dashboard</h3>
-                            <a href="adminabout" className="button">Learn More</a>
+                            <h3>Add Food</h3>
+                            <a href="adminfood" className="button">Learn More</a>
                         </div>
                     </div>
                 </section>
