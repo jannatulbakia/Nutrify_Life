@@ -16,6 +16,7 @@ import UserDetails from "../Pages/AdminPages/UserDetails/UserDetails";
 import LearnMore from "../Pages/About/LearnMore";
 import AdminFoodAdd from "../Pages/AdminPages/AdminFoodAdd/AdminFoodAdd";
 import SuggesstionDoc from "../Pages/FoodClass/SuggesstionDoc/SuggesstionDoc";
+import FoodCom from "../Pages/FoodClass/FoodCom";
 
 
 export const router = createBrowserRouter([
@@ -58,7 +59,11 @@ export const router = createBrowserRouter([
          },
          {
             path: "/suggestions",
-            element: <SuggesstionDoc/>
+            element: <SuggesstionDoc/>,
+         },
+         {
+            path: "/foodcom",
+            element: <FoodCom/>,
          },
          {
             path: "/nutryproducts",

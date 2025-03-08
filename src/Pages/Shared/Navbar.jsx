@@ -65,7 +65,7 @@ const Navbar = () => {
             className={`menu menu-sm dropdown-content ${isMenuVisible ? 'show' : ''}`}
           >
             <li><a href="/" className={getActiveClass('/')}>Home</a></li>
-            <li><a href="/diet" className={getActiveClass('/diet')}>Dietary Guide</a></li>
+            <li><a href="/foodcom" className={getActiveClass('/foodcom')}>Dietary Guide</a></li>
             <li><a href="/profile" className={getActiveClass('/profile')}>Profile</a></li>
             <li><a href="/caltrack" className={getActiveClass('/caltrack')}>Calorie Track</a></li>
             <li><a href="/sickfood" className={getActiveClass('/sickfood')}>Sickness Diet</a></li>
@@ -79,7 +79,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li><a href="/" className={getActiveClass('/')}>Home</a></li>
-          <li><a href="/diet" className={getActiveClass('/diet')}>Dietary Guide</a></li>
+          <li><a href="/foodcom" className={getActiveClass('/foodcom')}>Dietary Guide</a></li>
           <li><a href="/caltrack" className={getActiveClass('/caltrack')}>Calorie Track</a></li>
           <li><a href="/profile" className={getActiveClass('/profile')}>Profile</a></li>
           <li><a href="/sickfood" className={getActiveClass('/sickfood')}>Sickness Diet</a></li>
