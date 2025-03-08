@@ -3,7 +3,6 @@ import MainLayout from "../Layout/MainLayout";
 import CalTrack from "../Pages/CalTrack/CalTrack";
 import Home from "../Pages/Home/Home";
 import BmiCal from "../Pages/CalTrack/BmiCal/BmiCal";
-import FoodCal from "../Pages/CalTrack/FoodCalCnt/FoodCal";
 import SickFood from "../Pages/SickBasedFood/SickFood";
 import Signup from "../Pages/Registration/SignUp/SignUp";
 import LogIn from "../Pages/Registration/LogIn/LogIn";
@@ -37,10 +36,6 @@ export const router = createBrowserRouter([
          {
             path: "/bmical",
             element: <BmiCal />,
-         },
-         {
-            path: "/foodcal",
-            element: <FoodCal />,
          },
          {
             path: "/signup",
