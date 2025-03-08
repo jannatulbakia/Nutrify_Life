@@ -23,6 +23,21 @@
     color: #FFF8E1;
 }
 
+/* Active link - light peach background */
+.navbar a.active {
+    background-color: #FFCCB3; /* Light Peach */
+    color: white; /* Ensure text is readable */
+    border-radius: 8px; /* Optional: Rounded corners for better aesthetics */
+    padding: 5px 10px; /* Ensure proper padding */
+}
+
+/* Hover effect - black underline */
+.navbar a:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-underline-offset: 4px;
+}
+
 .btn-primary {
     background: #FFAA76;
     color: white;

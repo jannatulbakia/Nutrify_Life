@@ -3,38 +3,31 @@ import { auth, db } from "../../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import LogIn from "../Registration/LogIn/LogIn";
 import CalChart from "./CalChart";
-import "./Profile.css"
+import "./Profile.css";
 
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
+
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
-  
-
-      const docRef = doc(db, "Users", user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        setUserDetails(docSnap.data());
-        // console.log(docSnap.data());
+      if (user) {
+        const docRef = doc(db, "Users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setUserDetails(docSnap.data());
+        } else {
+          console.log("User data not found");
+        }
       } else {
-        // console.log("User is not logged in");
+        console.log("User is not logged in");
       }
     });
   };
+
   useEffect(() => {
     fetchUserData();
   }, []);
 
-  async function handleLogout() {
-    try {
-      localStorage.removeItem('user'); 
-      await auth.signOut();
-      window.location.href = "/login";
-      // console.log("User logged out successfully!");
-    } catch (error) {
-      // console.error("Error logging out:", error.message);
-    }
-  }
   return (
     <div className="profile-container">
       {userDetails ? (
@@ -52,13 +45,10 @@ function Profile() {
             <div className="profile-details">
               <p>Email: {userDetails.email}</p>
               <p>First Name: {userDetails.firstName}</p>
-           
             </div>
             <CalChart />
           </div>
-          <button className="profile-logout" onClick={handleLogout}>
-            Logout
-          </button>
+          {/* Removed the Logout button here */}
         </>
       ) : (
         <p className="login-container">

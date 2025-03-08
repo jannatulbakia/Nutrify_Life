@@ -50,7 +50,6 @@ function SignUp() {
       console.error("Error during registration:", error);
       toast.error(error.message || "Registration failed. Try again.", { position: "bottom-center" });
 
-
     }
   };
 
