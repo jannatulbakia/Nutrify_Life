@@ -16,9 +16,8 @@ const SignInWithGoogle = () => {
       const userDocRef = doc(db, "Users", user.uid);
       const userDoc = await getDoc(userDocRef);
 
-      // Check if the user already exists in Firestore
       if (!userDoc.exists()) {
-        // Prepare user data
+
         const userData = {
           email: user.email,
           firstName: user.displayName.split(" ")[0] || "",
@@ -27,10 +26,9 @@ const SignInWithGoogle = () => {
           role: "user",
         };
 
-        // Store user in Firestore
+
         await setDoc(userDocRef, userData);
 
-        // Send user data to your API
         const response = await fetch("http://localhost:5000/api/auth/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -44,7 +42,6 @@ const SignInWithGoogle = () => {
         }
       }
 
-      // Store user in local storage
       localStorage.setItem("user", JSON.stringify(user));
       toast.success("Google Login Successful!", { position: "top-center" });
       navigate("/profile");

@@ -6,8 +6,8 @@ body {
 }
 
 .content {
-    flex: 1; /* This makes the content area take up available space */
-    padding-bottom: 4rem; /* Adjust this value based on footer height */
+    flex: 1; 
+    padding-bottom: 4rem; 
 }
 
 .footer {

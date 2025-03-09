@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase/firebase'; // Import auth for logging out
+import { auth } from '../../firebase/firebase'; 
 import './Navbar.css';
 
 const Navbar = () => {
@@ -17,17 +17,17 @@ const Navbar = () => {
     if (userData) {
       const parsedData = JSON.parse(userData);
       setRole(parsedData.role);
-      setIsLoggedIn(true); // User is logged in
+      setIsLoggedIn(true); 
     }
   }, []);
 
   const handleLogout = async () => {
     try {
-      localStorage.removeItem('user'); // Clear user data from local storage
-      await auth.signOut(); // Sign out from Firebase
-      setIsLoggedIn(false); // Update login state
-      setRole(null); // Clear role
-      navigate('/login'); // Redirect to login page
+      localStorage.removeItem('user'); 
+      await auth.signOut(); 
+      setIsLoggedIn(false); 
+      setRole(null); 
+      navigate('/login'); 
     } catch (error) {
       console.error("Error logging out:", error.message);
     }
