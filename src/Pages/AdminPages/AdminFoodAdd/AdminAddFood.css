@@ -1,0 +1,65 @@
+.prod {
+    max-width: 1100px;
+    margin: 10px;
+    margin-bottom: 100px;
+    padding: 20px;
+    background: #f1e3d6;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background: #eb9249;
+    color: white;
+    cursor: pointer;
+}
+
+
+.listt ul {
+    list-style: none;
+    padding: 0;
+}
+
+.listt li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 5px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.edidel {
+    background: #fff3cd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.edidel button {
+    background: #ff9900;
+}
+
+.edidel button:hover {
+    background: #db892b;
+}

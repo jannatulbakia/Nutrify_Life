@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './AdminAddFood.css';
 
 const AdminFoodAdd = () => {
     const [products, setProducts] = useState([]);
@@ -64,7 +65,7 @@ const AdminFoodAdd = () => {
     };
 
     return (
-        <div>
+        <div className='prod'>
             <h2>Manage Products</h2>
             {error && <p>Error: {error}</p>}
             <div>
@@ -90,7 +91,7 @@ const AdminFoodAdd = () => {
                 <button onClick={handleCreate}>Create</button>
             </div>
 
-            <div>
+            <div className='listt'>
                 <h3>Product List</h3>
                 <ul>
                     {products.map((product) => (
@@ -104,7 +105,7 @@ const AdminFoodAdd = () => {
             </div>
 
             {editProduct && (
-                <div>
+                <div className='edidel'>
                     <h3>Edit Product</h3>
                     <input
                         type="text"
