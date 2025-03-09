@@ -1,4 +1,4 @@
-/* Floating Chat Button */
+
 .chatbox-icon {
   position: fixed;
   bottom: 20px;
@@ -18,25 +18,25 @@
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  z-index: 1000; /* Ensures it's above other elements */
+  z-index: 1000; 
 }
 
 .chatbox-icon:hover {
   background: #ff4f4f;
 }
 
-/* Chat Icon */
+
 .chat-icon {
   font-size: 2rem;
 }
 
-/* ChatAI Text */
+
 .chat-text {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* Chatbox Container */
+
 .chatbox-container {
   position: fixed;
   bottom: 80px;
@@ -48,17 +48,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  z-index: 1000; /* Ensures it's above the footer */
+  z-index: 1000; 
 }
 
-/* Chatbox Iframe */
+
 .chatbox-iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* Close Button */
+
 .chatbox-close {
   position: absolute;
   top: 10px;
@@ -81,8 +81,8 @@
   background: #ff4f4f;
 }
 
-/* Footer Fix */
+
 .footer {
   position: relative;
-  z-index: 10; /* Lower than chatbox */
+  z-index: 10; 
 }

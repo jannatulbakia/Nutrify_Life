@@ -57,7 +57,6 @@ const SuggestionDoc = () => {
 
   return (
     <div className="con">
-      {/* Doctor Information Section */}
       <div className="doctor-info">
         <h1>Suggestion From Doctor 👩‍⚕️</h1>
         <p className="doctor-name">Dr. Subrina Alam Pushpa</p>
