@@ -1,3 +1,4 @@
+
 import BmiCal from "./BmiCal/BmiCal"; 
 import './CalTrack.css';  
 
@@ -17,6 +18,7 @@ const CalTrack = () => {
       </div>
       <p>Calories Count</p>
       <BmiCal />
+     
     
     </div>
     </div>

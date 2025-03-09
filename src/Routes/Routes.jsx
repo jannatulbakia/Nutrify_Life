@@ -36,6 +36,7 @@ export const router = createBrowserRouter([
             path: "/caltrack",
             element: <CalTrack />,
          },
+         
          {
             path: "/bmical",
             element: <BmiCal />,

@@ -1,7 +1,7 @@
 import React from "react";
 import { auth, googleProvider, db } from "../../../firebase/firebase";
 import { signInWithPopup } from "firebase/auth";
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -16,20 +16,38 @@ const SignInWithGoogle = () => {
       const userDocRef = doc(db, "Users", user.uid);
       const userDoc = await getDoc(userDocRef);
 
+      // Check if the user already exists in Firestore
       if (!userDoc.exists()) {
-        await setDoc(userDocRef, {
+        // Prepare user data
+        const userData = {
           email: user.email,
           firstName: user.displayName.split(" ")[0] || "",
           lastName: user.displayName.split(" ")[1] || "",
           photo: user.photoURL || "",
           role: "user",
+        };
+
+        // Store user in Firestore
+        await setDoc(userDocRef, userData);
+
+        // Send user data to your API
+        const response = await fetch("http://localhost:5000/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
         });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          toast.error(errorData.message || "Registration failed with API", { position: "bottom-center" });
+          return;
+        }
       }
 
+      // Store user in local storage
       localStorage.setItem("user", JSON.stringify(user));
-
       toast.success("Google Login Successful!", { position: "top-center" });
-      navigate("/profile"); 
+      navigate("/profile");
     } catch (error) {
       toast.error("Google Sign-In Failed: " + error.message, {
         position: "bottom-center",
