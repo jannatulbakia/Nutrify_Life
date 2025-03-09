@@ -1,23 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.content {
+    flex: 1; /* This makes the content area take up available space */
+    padding-bottom: 4rem; /* Adjust this value based on footer height */
+}
 
 .footer {
     background: linear-gradient(to right, #FF9A6E, #FFB75F);
-    padding: 2rem 0;
+    padding: 2rem;
     color: white;
     text-align: center;
     box-shadow: 0px -4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 100;
 }
+
 .footer-content {
     max-width: 250px;
     margin: 0 auto;
-    
 }
 
 .footer p {
     font-size: 1rem;
     margin: 0;
 }
+
 .social-links {
     display: flex;
     justify-content: center;
