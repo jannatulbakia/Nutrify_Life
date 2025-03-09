@@ -6,7 +6,6 @@ const AdminFoodAdd = () => {
     const [editProduct, setEditProduct] = useState(null);
     const [error, setError] = useState(null);
 
-    // Fetch products on component mount
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -16,7 +15,7 @@ const AdminFoodAdd = () => {
             const response = await fetch('http://localhost:5000/api/products');
             if (!response.ok) throw new Error('Failed to fetch products');
             const data = await response.json();
-            setProducts(data.data); // Adjust based on your API response structure
+            setProducts(data.data); 
         } catch (error) {
             setError(error.message);
         }
@@ -30,8 +29,8 @@ const AdminFoodAdd = () => {
                 body: JSON.stringify(newProduct),
             });
             if (!response.ok) throw new Error('Failed to create product');
-            await fetchProducts(); // Refresh the product list
-            setNewProduct({ name: '', problem: '', improve: '' }); // Reset form
+            await fetchProducts(); 
+            setNewProduct({ name: '', problem: '', improve: '' });
         } catch (error) {
             setError(error.message);
         }
@@ -45,8 +44,8 @@ const AdminFoodAdd = () => {
                 body: JSON.stringify(editProduct),
             });
             if (!response.ok) throw new Error('Failed to update product');
-            await fetchProducts(); // Refresh the product list
-            setEditProduct(null); // Reset edit state
+            await fetchProducts(); 
+            setEditProduct(null); 
         } catch (error) {
             setError(error.message);
         }
@@ -58,7 +57,7 @@ const AdminFoodAdd = () => {
                 method: 'DELETE',
             });
             if (!response.ok) throw new Error('Failed to delete product');
-            await fetchProducts(); // Refresh the product list
+            await fetchProducts();
         } catch (error) {
             setError(error.message);
         }

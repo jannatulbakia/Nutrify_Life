@@ -5,8 +5,14 @@ import Diet from './Diet';
 const FoodCom = () => {
     return (
         <div>
-           <Diet/> 
-           <SuggestionDoc/>
+            <Diet />
+            <SuggestionDoc />
+            <iframe
+                src="https://www.chatbase.co/chatbot-iframe/SO1jbjjkLxoBLtuGwtsFo"
+                width="100%"
+                style={{ height: '100%', minHeight: '700px' }}
+                frameBorder="0"
+            ></iframe>
         </div>
     );
 };
