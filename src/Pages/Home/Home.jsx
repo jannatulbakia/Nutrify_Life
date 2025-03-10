@@ -13,7 +13,7 @@ const Home = () => {
                     <p>Your Journey to a Healthier Life Starts Here</p>
 
                     <div className="cta-buttons">
-                        <button className="btn primary" onClick={() => navigate("/signup")}>
+                        <button className="btn primary" onClick={() => navigate("/login")}>
                             Get Started
                         </button>
                         <button className="btn secondary" onClick={() => navigate("/caltrack")}>
